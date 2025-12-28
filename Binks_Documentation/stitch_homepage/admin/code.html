@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DigitalStore Admin Panel</title>
+<!-- Material Symbols Link -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4a6df7",
+              "background-light": "#f5f6f8",
+              "background-dark": "#101322",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1a1d2d",
+              "border-light": "#e7e9f4",
+              "border-dark": "#2a2d3d",
+              "text-main": "#0d101c",
+              "text-muted": "#6b7280",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-main dark:text-white antialiased overflow-hidden">
+<div class="flex h-screen w-full flex-col">
+<!-- Top Navbar -->
+<header class="flex h-16 w-full shrink-0 items-center justify-between border-b border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark px-6 z-20">
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined !text-[20px]">storefront</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight text-text-main dark:text-white">DigitalStore <span class="text-primary font-normal">Admin</span></h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative rounded-full p-2 text-text-muted hover:bg-background-light dark:hover:bg-background-dark transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500 ring-2 ring-surface-light dark:ring-surface-dark"></span>
+</button>
+<div class="h-8 w-px bg-border-light dark:bg-border-dark"></div>
+<div class="flex items-center gap-3">
+<div class="hidden md:block text-right">
+<p class="text-sm font-semibold leading-none">Admin User</p>
+<p class="text-xs text-text-muted mt-1">Super Admin</p>
+</div>
+<div class="h-9 w-9 overflow-hidden rounded-full border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark">
+<img alt="Admin Avatar" class="h-full w-full object-cover" data-alt="Admin user profile avatar illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGabJxMJE9fCH0kJ6fMzGPVIpwYJmnV3TxzhFsh6OBMyeGiHvODb2jFrVcLa6uGmqk24CKaycpLlW0KiWCX-C4OOb_6mn8FoA9DA7RQBgbmjbAqxVLwbpHApPOt5KqGD2IoXDNJoJNbqHW21N7l7tuXNrozBQDhJ6EW3WqJUuocIWs3FZ2W2PbjrFvRnaZNQvddsiM7hSGfhdqht6gbnBQGlJt1zPLaTVaYaQcwNYHotNvgrRQWImK42qMYUiaETSuAcpWv7x9IFrs"/>
+</div>
+<button class="flex items-center justify-center rounded-lg p-2 text-text-muted hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors ml-2" title="Logout">
+<span class="material-symbols-outlined">logout</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Layout -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 flex-col border-r border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark hidden md:flex">
+<nav class="flex-1 space-y-1 px-3 py-6">
+<!-- Dashboard -->
+<a class="group flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2.5 text-primary transition-all" href="#">
+<span class="material-symbols-outlined fill">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<div class="pt-4 pb-2">
+<p class="px-3 text-xs font-semibold uppercase tracking-wider text-text-muted">Inventory</p>
+</div>
+<!-- Stock -->
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-muted hover:bg-background-light dark:hover:bg-background-dark hover:text-text-main dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Stock</span>
+</a>
+<!-- Orders -->
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-muted hover:bg-background-light dark:hover:bg-background-dark hover:text-text-main dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+<span class="ml-auto rounded-full bg-red-100 dark:bg-red-900/30 px-2 py-0.5 text-xs font-medium text-red-600 dark:text-red-400">12</span>
+</a>
+<!-- Products -->
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-muted hover:bg-background-light dark:hover:bg-background-dark hover:text-text-main dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">sell</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<!-- Categories -->
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-muted hover:bg-background-light dark:hover:bg-background-dark hover:text-text-main dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="text-sm font-medium">Categories</span>
+</a>
+<div class="pt-4 pb-2">
+<p class="px-3 text-xs font-semibold uppercase tracking-wider text-text-muted">System</p>
+</div>
+<!-- Settings -->
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-muted hover:bg-background-light dark:hover:bg-background-dark hover:text-text-main dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="border-t border-border-light dark:border-border-dark p-4">
+<div class="rounded-xl bg-gradient-to-br from-primary to-blue-600 p-4 text-white">
+<div class="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h4 class="mb-1 text-sm font-semibold">Pro Status</h4>
+<p class="text-xs text-white/80">Your store is running on the Premium plan.</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-6 md:p-8">
+<div class="mx-auto max-w-6xl space-y-8">
+<!-- Page Heading -->
+<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-text-main dark:text-white">Overview</h2>
+<p class="mt-1 text-text-muted">Welcome back, here's what's happening with your store today.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg bg-surface-light dark:bg-surface-dark px-4 py-2.5 text-sm font-medium text-text-main dark:text-white shadow-sm ring-1 ring-border-light dark:ring-border-dark hover:bg-gray-50 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-[20px]">cloud_download</span>
+                                Export Report
+                            </button>
+<button class="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-bold text-white shadow-md shadow-blue-500/20 hover:bg-blue-600 transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                                New Product
+                            </button>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+<!-- Stat 1 -->
+<div class="rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm ring-1 ring-border-light dark:ring-border-dark transition-all hover:shadow-md">
+<div class="flex items-center justify-between">
+<p class="text-sm font-medium text-text-muted">Total Revenue</p>
+<span class="flex items-center text-xs font-medium text-green-600 bg-green-100 dark:bg-green-900/30 dark:text-green-400 rounded-full px-2 py-0.5">
+                                    +12.5%
+                                </span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<h3 class="text-2xl font-bold text-text-main dark:text-white">$45,231.89</h3>
+<p class="text-xs text-text-muted mt-1">From last month</p>
+</div>
+<div class="rounded-lg bg-blue-50 dark:bg-blue-900/20 p-2 text-primary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm ring-1 ring-border-light dark:ring-border-dark transition-all hover:shadow-md">
+<div class="flex items-center justify-between">
+<p class="text-sm font-medium text-text-muted">Pending Orders</p>
+<span class="flex items-center text-xs font-medium text-green-600 bg-green-100 dark:bg-green-900/30 dark:text-green-400 rounded-full px-2 py-0.5">
+                                    +2.1%
+                                </span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<h3 class="text-2xl font-bold text-text-main dark:text-white">12</h3>
+<p class="text-xs text-text-muted mt-1">Need processing</p>
+</div>
+<div class="rounded-lg bg-orange-50 dark:bg-orange-900/20 p-2 text-orange-500">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm ring-1 ring-border-light dark:ring-border-dark transition-all hover:shadow-md">
+<div class="flex items-center justify-between">
+<p class="text-sm font-medium text-text-muted">Active Products</p>
+<span class="flex items-center text-xs font-medium text-text-muted bg-gray-100 dark:bg-gray-800 rounded-full px-2 py-0.5">
+                                    0.0%
+                                </span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<h3 class="text-2xl font-bold text-text-main dark:text-white">1,403</h3>
+<p class="text-xs text-text-muted mt-1">In 8 categories</p>
+</div>
+<div class="rounded-lg bg-purple-50 dark:bg-purple-900/20 p-2 text-purple-500">
+<span class="material-symbols-outlined">dns</span>
+</div>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm ring-1 ring-border-light dark:ring-border-dark transition-all hover:shadow-md">
+<div class="flex items-center justify-between">
+<p class="text-sm font-medium text-text-muted">Low Stock</p>
+<span class="flex items-center text-xs font-medium text-red-600 bg-red-100 dark:bg-red-900/30 dark:text-red-400 rounded-full px-2 py-0.5">
+                                    -5 items
+                                </span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<h3 class="text-2xl font-bold text-text-main dark:text-white">5</h3>
+<p class="text-xs text-text-muted mt-1">Restock required</p>
+</div>
+<div class="rounded-lg bg-red-50 dark:bg-red-900/20 p-2 text-red-500">
+<span class="material-symbols-outlined">warning</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Charts & Content -->
+<div class="grid gap-6 lg:grid-cols-3">
+<!-- Main Chart -->
+<div class="rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm ring-1 ring-border-light dark:ring-border-dark lg:col-span-2">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="text-lg font-bold text-text-main dark:text-white">Sales Analytics</h3>
+<p class="text-sm text-text-muted">Revenue performance over the last 30 days</p>
+</div>
+<select class="rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark py-1.5 pl-3 pr-8 text-sm text-text-main dark:text-white focus:border-primary focus:ring-primary">
+<option>Last 30 Days</option>
+<option>Last 7 Days</option>
+<option>This Year</option>
+</select>
+</div>
+<!-- Chart Placeholder -->
+<div class="relative h-[300px] w-full">
+<div class="absolute inset-0 flex items-end justify-between gap-2 px-2 pb-6">
+<!-- Bar 1 --> <div class="w-full rounded-t-sm bg-primary/20 hover:bg-primary/30 transition-all h-[40%]"></div>
+<!-- Bar 2 --> <div class="w-full rounded-t-sm bg-primary/20 hover:bg-primary/30 transition-all h-[60%]"></div>
+<!-- Bar 3 --> <div class="w-full rounded-t-sm bg-primary/20 hover:bg-primary/30 transition-all h-[35%]"></div>
+<!-- Bar 4 --> <div class="w-full rounded-t-sm bg-primary/20 hover:bg-primary/30 transition-all h-[80%]"></div>
+<!-- Bar 5 --> <div class="w-full rounded-t-sm bg-primary/20 hover:bg-primary/30 transition-all h-[55%]"></div>
+<!-- Bar 6 --> <div class="w-full rounded-t-sm bg-primary hover:bg-blue-600 transition-all h-[90%] shadow-lg shadow-blue-500/20"></div>
+<!-- Bar 7 --> <div class="w-full rounded-t-sm bg-primary/20 hover:bg-primary/30 transition-all h-[70%]"></div>
+</div>
+<!-- Grid Lines Background -->
+<div class="absolute inset-0 z-[-1] flex flex-col justify-between py-6">
+<div class="h-px w-full border-t border-dashed border-border-light dark:border-border-dark"></div>
+<div class="h-px w-full border-t border-dashed border-border-light dark:border-border-dark"></div>
+<div class="h-px w-full border-t border-dashed border-border-light dark:border-border-dark"></div>
+<div class="h-px w-full border-t border-dashed border-border-light dark:border-border-dark"></div>
+<div class="h-px w-full border-t border-gray-200 dark:border-gray-700"></div>
+</div>
+</div>
+<div class="flex justify-between px-2 text-xs font-medium text-text-muted">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+<!-- Recent Orders -->
+<div class="rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm ring-1 ring-border-light dark:ring-border-dark">
+<h3 class="mb-4 text-lg font-bold text-text-main dark:text-white">Recent Orders</h3>
+<div class="space-y-4">
+<!-- Order Item 1 -->
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+<img alt="Spotify Logo" class="h-full w-full object-cover" data-alt="Spotify logo representing a digital product order" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATCTMq2n_tOSzPxZ3w0-el3n76wreLkSVUpSHwmxeQtBwaqDPuGnqC0eHMlXRfbyAjoH0Jc5blR_1KLrlLRYKsKrpsTh926ljfM4CKX3aLBJmb-bkKeqoC4j6E0n3SozxEPLCUd-s7eKqirtOGbfsc0T-ybnKX9iCkF1VdtauM9dOs0USHvAwaoyrMhZ76o75jvb7uqD9KIqi2mpX6F49t-MPb5ZP52zWwqmYPQkILQLbg8EqAd-IBc2fY15-INlDBfTUPeJMqldbm"/>
+</div>
+<div class="min-w-0 flex-1">
+<p class="truncate text-sm font-medium text-text-main dark:text-white">Spotify Premium 1Y</p>
+<p class="truncate text-xs text-text-muted">john.doe@example.com</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-text-main dark:text-white">$45.00</p>
+<p class="text-xs text-green-600 dark:text-green-400">Completed</p>
+</div>
+</div>
+<!-- Order Item 2 -->
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+<img alt="Netflix Logo" class="h-full w-full object-cover" data-alt="Netflix logo representing a digital product order" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbh4ZdtTKm-5rsB6CTKLMBvbrYhDKzRWBc_30-44fdBq0MUdgCT1TmS0kaHZ-fGU2cqAaeTn_XyQ2zHUl1h8thg8_jGrYJlizFNilxyys_HzOR16UoI7FekAuR5upjpWHbM6CFlbIGRqNuO3-smx6Uf4gfTwqJeFLUmq5xG1Pepwc-5HfGzpCg-1koAlwjbUdeuZdHKE9x1cTS59iHx80d9E97RlnDggrqOD3VVs94SMH-4Y0F8dROaxAPNrlJjGHANXA7Mt_MhT0O"/>
+</div>
+<div class="min-w-0 flex-1">
+<p class="truncate text-sm font-medium text-text-main dark:text-white">Netflix 4K UHD</p>
+<p class="truncate text-xs text-text-muted">sara.smith@test.com</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-text-main dark:text-white">$12.99</p>
+<p class="text-xs text-orange-500">Pending</p>
+</div>
+</div>
+<!-- Order Item 3 -->
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+<img alt="Adobe Logo" class="h-full w-full object-cover" data-alt="Adobe logo representing a digital product order" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvCrZL0La-tWiUcfWcwL0dugdiRpa42fqjxdrmbPLa0D9hdkqrUoUI11_uaxq08U9_HHO5k5R35RZdcz4xVkf5oQLqIS9gVIZtXda61FwyPF7zvXPWYFAyrJt6BAvR9na7B2srhFsKlQZ1AnnsByOZUKcRZe7LAhgntKlx07G8upUiNLE0w2V5tEtD6gY3iL23HDxHz6FIz1H8hKy7nYaOaauZoWpe_f1JD-dGS8Cclm7IEFcpzWiPUWe-YJWonnGhPC7zyLcLBwFh"/>
+</div>
+<div class="min-w-0 flex-1">
+<p class="truncate text-sm font-medium text-text-main dark:text-white">Adobe Creative Cloud</p>
+<p class="truncate text-xs text-text-muted">mike.ross@law.com</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-text-main dark:text-white">$29.99</p>
+<p class="text-xs text-green-600 dark:text-green-400">Completed</p>
+</div>
+</div>
+<!-- Order Item 4 -->
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+<img alt="NordVPN Logo" class="h-full w-full object-cover" data-alt="VPN service logo representing a digital product order" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5O2dv_1e3cpLU262fzM6E4Fl8rft-jJSjRpH1kSK0pkvg_k7N_HGKYU3C8DkzX7ib6pudT9VVzS8PDZNMjCNSUXLG8y3Q1yLsVej2MflScjokJBikqYbzYP25f9ESbu7wXb4EZz7f_-8HpIV_U5fZtOv6gJqHbwe2ILPumZmzaWdd_FvZ6X02ow-wyVF9x_ZlIjyY6ohVLuTUddvJFLoq28esYQwkxul9o9HHEi9bEtXqqYkhrU_RsM8cDMD1qskYYKsOUgIS2T1r"/>
+</div>
+<div class="min-w-0 flex-1">
+<p class="truncate text-sm font-medium text-text-main dark:text-white">NordVPN 2 Year</p>
+<p class="truncate text-xs text-text-muted">user99@mail.com</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-text-main dark:text-white">$89.00</p>
+<p class="text-xs text-green-600 dark:text-green-400">Completed</p>
+</div>
+</div>
+</div>
+<button class="mt-6 w-full rounded-lg border border-border-light dark:border-border-dark py-2 text-sm font-medium text-text-muted hover:bg-background-light dark:hover:bg-background-dark transition-colors">
+                                View All Orders
+                            </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,76 @@
+<script lang="ts">
+  import { Search, ShoppingCart, User, Menu, Bolt, X } from 'lucide-svelte';
+  import { siteConfig } from '$lib/config';
+  import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+  import { fade } from 'svelte/transition';
+  
+  let isMobileMenuOpen = false;
+
+  function toggleMobileMenu() {
+    isMobileMenuOpen = !isMobileMenuOpen;
+  }
+</script>
+
+<div class="sticky top-0 z-50 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+  <div class="flex justify-center w-full px-4 md:px-8 py-3">
+    <div class="flex items-center justify-between w-full max-w-[1200px] gap-4">
+      <!-- Brand -->
+      <a href="/" class="flex items-center gap-2 text-slate-900 dark:text-white">
+        <div class="size-8 text-primary flex items-center justify-center">
+          <Bolt class="size-8" />
+        </div>
+        <h2 class="text-xl font-bold tracking-tight">{siteConfig.siteName}</h2>
+      </a>
+      
+      <!-- Search -->
+      <div class="hidden md:flex flex-1 max-w-lg mx-8">
+        <label class="relative flex w-full items-center">
+          <div class="absolute left-4 text-slate-400 flex items-center pointer-events-none">
+            <Search class="size-5" />
+          </div>
+          <input class="w-full h-11 pl-12 pr-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-slate-400" placeholder="Search for accounts, keys, or software..." value=""/>
+        </label>
+      </div>
+      
+      <!-- Actions -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <ThemeToggle />
+        <a class="hidden sm:block text-sm font-medium hover:text-primary transition-colors" href="/?my-orders">My Orders</a>
+        <div class="flex gap-2">
+          <a href="/cart" class="flex items-center justify-center size-10 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors relative">
+            <ShoppingCart class="size-5" />
+            <span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white">2</span>
+          </a>
+          
+          <a href="/login" class="hidden sm:flex h-10 px-5 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors shadow-sm shadow-blue-500/30">
+            Login
+          </a>
+          <a href="/register" class="hidden sm:flex h-10 px-5 items-center justify-center rounded-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-white text-sm font-bold hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors">
+            Register
+          </a>
+           <!-- Mobile Menu Trigger -->
+           <button class="sm:hidden flex items-center justify-center size-10 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200" onclick={toggleMobileMenu}>
+             <Menu class="size-5" />
+           </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Mobile Menu Overlay - OUTSIDE sticky container -->
+{#if isMobileMenuOpen}
+  <div class="fixed inset-0 z-[99999] bg-white/60 dark:bg-slate-950/60 backdrop-blur-3xl flex flex-col items-center justify-center p-6 gap-8 transition-all supports-[backdrop-filter]:bg-white/60" transition:fade={{ duration: 200 }}>
+      <button class="absolute top-6 right-6 p-2 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" onclick={toggleMobileMenu}>
+          <X class="size-6 text-slate-500" />
+      </button>
+      
+      <nav class="flex flex-col gap-6 text-center w-full max-w-sm">
+          <a href="/" class="text-2xl font-bold text-slate-900 dark:text-white py-2 hover:text-primary transition-colors" onclick={toggleMobileMenu}>Home</a>
+          <a href="/?my-orders" class="text-2xl font-bold text-slate-900 dark:text-white py-2 hover:text-primary transition-colors" onclick={toggleMobileMenu}>My Orders</a>
+          <a href="/login" class="text-2xl font-bold text-slate-900 dark:text-white py-2 hover:text-primary transition-colors" onclick={toggleMobileMenu}>Login</a>
+          <hr class="border-slate-100 dark:border-slate-800 w-full" />
+          <a href="/register" class="text-2xl font-bold text-primary py-2 hover:scale-105 transition-transform" onclick={toggleMobileMenu}>Register</a>
+      </nav>
+  </div>
+{/if}

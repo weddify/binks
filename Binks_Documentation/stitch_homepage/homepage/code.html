@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DigitalStore - Beli Akun Premium Instan</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4a6df7",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101322",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-x-hidden">
+<div class="flex min-h-screen w-full flex-col">
+<!-- Navbar -->
+<div class="sticky top-0 z-50 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex justify-center w-full px-4 md:px-8 py-3">
+<div class="flex items-center justify-between w-full max-w-[1200px] gap-4">
+<!-- Brand -->
+<div class="flex items-center gap-2 text-slate-900 dark:text-white">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">bolt</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">DigitalStore</h2>
+</div>
+<!-- Search -->
+<div class="hidden md:flex flex-1 max-w-lg mx-8">
+<label class="relative flex w-full items-center">
+<div class="absolute left-4 text-slate-400 flex items-center pointer-events-none">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-11 pl-12 pr-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-slate-400" placeholder="Search for accounts, keys, or software..." value=""/>
+</label>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-3 sm:gap-4">
+<a class="hidden sm:block text-sm font-medium hover:text-primary transition-colors" href="#">My Orders</a>
+<div class="flex gap-2">
+<button class="flex items-center justify-center size-10 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors relative">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white">2</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</button>
+<button class="hidden sm:flex h-10 px-5 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors shadow-sm shadow-blue-500/30">
+                                Login
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Layout Container -->
+<main class="flex flex-1 flex-col items-center px-4 md:px-8 pb-10">
+<div class="flex flex-col w-full max-w-[1200px] gap-12">
+<!-- Hero Section -->
+<section class="@container mt-8">
+<div class="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-16 bg-white dark:bg-slate-800/50 p-6 md:p-12 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden">
+<!-- Decorative bg blur -->
+<div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col gap-6 items-start lg:w-1/2 z-10">
+<div class="flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 w-fit">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-xs font-semibold text-primary uppercase tracking-wide">Instant Delivery</span>
+</div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">
+                                    Beli Akun Premium <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Instan</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-lg">
+                                    Akses ribuan aplikasi premium tanpa ribet. Pengiriman otomatis 24/7 langsung ke email kamu dalam hitungan detik.
+                                </p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="h-12 px-8 rounded-lg bg-primary text-white text-base font-bold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/30 flex items-center gap-2">
+                                    Lihat Produk
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="h-12 px-8 rounded-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white text-base font-semibold hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors">
+                                    Cara Kerja
+                                </button>
+</div>
+<!-- Trust Badges -->
+<div class="flex items-center gap-6 mt-4 pt-6 border-t border-slate-100 dark:border-slate-700/50 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500">verified_user</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-400">Garansi Penuh</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">bolt</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-400">Proses 1 Detik</span>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2 flex justify-center z-10">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-slate-100 dark:bg-slate-900">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Abstract 3D composition representing digital streaming services and gaming subscriptions floating in blue space" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9r63uH0kQSTF6CdO8YRXiy3sdlb8gPRpj8cqwRr8--FbYAUI6CsmXzOoLKMfXX21DPFdclKWjKsM-B57X1Bzp3tv19Xc3hOV5zsQ4zCigo68kjHOAhH3-LKyWLrD8OmOOYIhk2xZRcevO5uHj9I1gEgkiuH69QJ8Z6lRJHuzEhRCktB0TK26UBoMDQ-lynRSTfiWYpNQ8USbFcwoIpzyQX4DYpWqrDHCAAffxlO7BYs5vTWg3R1ikWkw5Vs4gdfpgI_ItlpqPWB3z");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col gap-4 hover:shadow-md transition-shadow">
+<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">bolt</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-1">Pengiriman Kilat</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Sistem otomatis mengirim pesanan kamu hanya dalam 1 detik setelah pembayaran.</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col gap-4 hover:shadow-md transition-shadow">
+<div class="size-12 rounded-lg bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined text-3xl">shield</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-1">Transaksi Aman</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Setiap transaksi dilindungi enkripsi SSL dan garansi uang kembali jika gagal.</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col gap-4 hover:shadow-md transition-shadow">
+<div class="size-12 rounded-lg bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600">
+<span class="material-symbols-outlined text-3xl">support_agent</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-1">Layanan 24/7</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Tim support kami siap membantu kapanpun kamu mengalami kendala.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Kategori Populer</h2>
+<a class="text-primary font-medium text-sm hover:underline" href="#">Lihat Semua</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Streaming -->
+<div class="group cursor-pointer relative overflow-hidden rounded-xl aspect-[4/3] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Collage of streaming service logos like Netflix and Disney Plus" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUMqSFkD7fzYtlb1rl9z2-X0hnoj4YR5nOR3YgvCmUdQzAyGkVW6dcSJ5jHZVv0tkmUA9dmVXnaoKHy0G3lgtefSb2r6a_JwyWgLO7D6mjPPZYAjFTpXNHUFwtWJvBMqpUT2dKbCuZKHVFLbiOtNOWU47HXbIB-cxgSCs6q-oKKB2RaPYOmK6yolLnzlFUuv9pgAPwIMoe2VT60aP6ZzQy9HSLYm3tWnzSs7t-IN2o9dkLRXVVpPBmCojAUjEZZuivDYcO6Wiz_NEh");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-white text-sm">movie</span>
+<span class="text-xs font-bold text-green-400 uppercase tracking-wider">Populer</span>
+</div>
+<h3 class="text-white text-lg font-bold">Streaming</h3>
+<p class="text-slate-300 text-xs mt-1">Netflix, Disney+, Spotify</p>
+</div>
+</div>
+<!-- Gaming -->
+<div class="group cursor-pointer relative overflow-hidden rounded-xl aspect-[4/3] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Dark gaming setup background with neon lights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhDJdyMBdka8n56wwXe1feEkpcfOQU5dgl0uKfzNcM-wmeRG1ewU3e6WYYEat12PldnWCyjeeZOD_JXNUAEb2zj57r7fmhnKMGLs-hp1Ne-_tEH9FJP3A2wi_H0xKSAC3P9j1IlrF3RPShD3wzKNqIeLWSMc-y0b1N38JOBBK4HEiD6Q14ipl3vYEiJegDmiS6H3xwXFll45IA2nTNGfg7jIwsBykvGKRa6AOp_-CR_chxSpxX3zl6NFfVUBDEwbF-eJ2EU5i-HEge");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-white text-sm">sports_esports</span>
+</div>
+<h3 class="text-white text-lg font-bold">Gaming</h3>
+<p class="text-slate-300 text-xs mt-1">Steam, Valorant, PSN</p>
+</div>
+</div>
+<!-- Software -->
+<div class="group cursor-pointer relative overflow-hidden rounded-xl aspect-[4/3] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Computer screen showing software code and interface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAoEud1bJzV0V4YN1uPXalfPL6Ivkw32RWG2JIV07WZRw83RWE4lwrcwt1T3lNLQQdMqT6K7RufT9K_6amoLTnPhfcAIUL0cfXdsfpwjS61bw4T7oIOlQ0zUOjoE402hXEHODgXZZq4QqrzdsmGVdpcYCRbsb_Q9sjbzDoIpwvL71NFv8SG5C4VylYX0-7VP66B83GHuI652PeciUL7zlf_7TYV_UkWTAvR0NgtnUfWI_aa0lUyM3zR6hu_-igtRvr0_kXgKYmiGFE3");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-white text-sm">apps</span>
+</div>
+<h3 class="text-white text-lg font-bold">Software</h3>
+<p class="text-slate-300 text-xs mt-1">Adobe, Microsoft Office</p>
+</div>
+</div>
+<!-- VPN -->
+<div class="group cursor-pointer relative overflow-hidden rounded-xl aspect-[4/3] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Network security abstract concept map with connections" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6CHraz-61CzsGXG4wtKrvwvgTlXjpI6FwSXXL7sdE4U88rwbkmH1JGgGJu8BIhgbGI6cJhIg0ObAg292SDGl9TgHginhmat8zhFcPjdDUUTs1Hi-PgjOUrW-12RnsRQ92amujqQQB5VtG4REbWbJ3R3adAUg8JtYNfkEGmiopljQNyD43jgslvnlHjjXaANV6tovnrfnwhTHQQAE7_PVgI-tglx2BnSKWoInLYiP9nUgsWF8m8I0VH1HoGY2aZcpqysNlw-PCzy4i");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-white text-sm">lock</span>
+</div>
+<h3 class="text-white text-lg font-bold">VPN &amp; Tools</h3>
+<p class="text-slate-300 text-xs mt-1">NordVPN, Canva Pro</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Produk Pilihan</h2>
+<span class="hidden sm:inline-block px-3 py-1 rounded-full bg-red-100 text-red-600 text-xs font-bold uppercase">Hot Deals</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+</button>
+<button class="p-2 rounded-lg bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400">
+<span class="material-symbols-outlined text-xl">view_list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-700/50 hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col h-full">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-900 mb-4">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Netflix N logo on black background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3CS1x0SPVbPPZCPR0NsXLTWCw55HrmIlLyTfVy-SeIxBW4l7OGBPfYsBCj-HZ28BpWmbmQrhT5aHBZ1_DfrpzrKQKAGEjxDBX0sHcg3GN7mGogQ8pK_bSvW7I3bzHPSFiq6WY0wVKgCGXVi-KYnbkPzuBGEWsw_hQBsiOXwDAM8JvKmPrO5kZy-ppYWLeYlqf41xVN4glJXK5ho8DtnsPZEFq22r6gUsl1pudJZTaoCPA0gZ9kqk2EPUPxRnSVmgQLe22iun3B2NP");'></div>
+<div class="absolute top-2 right-2">
+<span class="flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+</span>
+</div>
+<div class="absolute bottom-2 left-2 bg-black/70 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold text-white uppercase tracking-wider">
+                                    Premium 4K
+                                </div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight group-hover:text-primary transition-colors">Netflix Premium</h3>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mb-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+<span>50+ Stok</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shopping_bag</span>
+<span>1.2k Terjual</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-700 mt-auto">
+<div class="flex items-end justify-between mb-4">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 line-through">Rp 180.000</span>
+<span class="text-xl font-bold text-slate-900 dark:text-white">Rp 35.000</span>
+</div>
+<span class="text-xs font-bold text-green-600 bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded">-80%</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">Detail</button>
+<button class="px-3 py-2 rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors shadow-md shadow-blue-500/20">Beli</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-700/50 hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col h-full">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-900 mb-4">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Spotify logo on green background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUEykhRksq_R1d72cT6-nDu8m9diHgsHN-sc3qRAbiLxzcSNpVw5nYi6B7G0SaEp1ldBe7zQHf0Adz-qDe7zX1w8AwIJVrSwTz73QkctpEjHEOo4zIS3atQpQbsvohRMzzTSg8pyuAXqn6L4eRMoSPd4hGhojZbqzp3-hdEPeLqy8z6MXmUxfo_BTOlmO3wO5pOnkSA6F9MZ-6TSVv_8nTXAO0-bw4-EcsAWaVTgq3332qtDXYo3DNSFYz7gpq6SCiEaxs73q1HLaX");'></div>
+<div class="absolute top-2 right-2">
+<span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+</div>
+<div class="absolute bottom-2 left-2 bg-black/70 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold text-white uppercase tracking-wider">
+                                    Individual
+                                </div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight group-hover:text-primary transition-colors">Spotify Premium</h3>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mb-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+<span>20 Stok</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shopping_bag</span>
+<span>800 Terjual</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-700 mt-auto">
+<div class="flex items-end justify-between mb-4">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 line-through">Rp 55.000</span>
+<span class="text-xl font-bold text-slate-900 dark:text-white">Rp 20.000</span>
+</div>
+<span class="text-xs font-bold text-green-600 bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded">-65%</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">Detail</button>
+<button class="px-3 py-2 rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors shadow-md shadow-blue-500/20">Beli</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-700/50 hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col h-full">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-900 mb-4">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Youtube logo red background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLXVpStQgKAjM-LTJtOiW3cUs84X5bPcbwD5r_nJjPwBGgz0TMXHcpnqtrpF21u0dSkPXTZbhSNFCehXrE2W6LfsuvEZSgZKv0xPbiRRe10j_dOmRD81sbvlYISLXO49laKXRWwgd2WTuFCJlW2vpfn4275tE09KbvL07k3lyfpuVdKLl2YEa8CqkAPkHzHftLRR7I49G-445bhPW6QuPLSq_O4z_g9dA9h_lWDdFVvo1hcD-XzB_srM_BnMuW3qRmljuewR-nrYhq");'></div>
+<div class="absolute top-2 right-2">
+<span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+</div>
+<div class="absolute bottom-2 left-2 bg-black/70 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold text-white uppercase tracking-wider">
+                                    No Ads
+                                </div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight group-hover:text-primary transition-colors">YouTube Premium</h3>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mb-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+<span>150+ Stok</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shopping_bag</span>
+<span>2.1k Terjual</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-700 mt-auto">
+<div class="flex items-end justify-between mb-4">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 line-through">Rp 59.000</span>
+<span class="text-xl font-bold text-slate-900 dark:text-white">Rp 15.000</span>
+</div>
+<span class="text-xs font-bold text-green-600 bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded">-75%</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">Detail</button>
+<button class="px-3 py-2 rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors shadow-md shadow-blue-500/20">Beli</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-700/50 hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col h-full">
+<div class="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-900 mb-4">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Microsoft windows logo blue abstract" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBemQ1l7I1onmDrTfNTWeqSswgcS81N47_3U2bOvdz3xmHyq6IL5kQqURmEwztvjlRFYyy5J3BcVqJTQvpwcnjkpSiPGhpdhN6ZRBoY3aGNqdttubKlxwQGE8_k3iqkKlnrJkavasl8hWLcwSdBsQblTjNlm8zAmdOFwZkAaTSb_3bBWFbZ2sfNGa98wACZj11T9hzVHGakS-SvV9uA9pwP3xJ7wPBCKxr3CXWmD63fuF7CXJ4OP2khHKrW360YW4OIfSkWhZdpPdxy");'></div>
+<div class="absolute top-2 right-2">
+<span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+</div>
+<div class="absolute bottom-2 left-2 bg-black/70 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold text-white uppercase tracking-wider">
+                                    Pro Key
+                                </div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight group-hover:text-primary transition-colors">Windows 11 Pro</h3>
+</div>
+<div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mb-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+<span class="text-red-500">Habis</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shopping_bag</span>
+<span>450 Terjual</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-700 mt-auto">
+<div class="flex items-end justify-between mb-4">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 line-through">Rp 2.500.000</span>
+<span class="text-xl font-bold text-slate-900 dark:text-white">Rp 99.000</span>
+</div>
+<span class="text-xs font-bold text-green-600 bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded">-90%</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">Detail</button>
+<button class="px-3 py-2 rounded-lg bg-slate-200 text-slate-400 text-sm font-bold cursor-not-allowed" disabled="">Stok Habis</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-8 border-t border-slate-200 dark:border-slate-700/50">
+<div class="text-center mb-10">
+<h2 class="text-2xl font-bold mb-2">Apa Kata Mereka?</h2>
+<p class="text-slate-500 dark:text-slate-400">Ribuan pelanggan puas dengan layanan otomatis kami.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 relative">
+<div class="text-yellow-400 flex mb-4">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 mb-6 italic">"Gila sih ini, baru bayar langsung masuk email akunnya. Gapake nunggu admin bales chat. Recommended parah!"</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-gray-200 overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWMEpiHGEv5zhY7ork8779hOU_cC7UtKoWZj-hjqV7jxrkuGELb-o6UIhdX34eKPeJ65xxDzynBHGWHWCqlJfK_0eQ-VwGZN63ynVi4pOq8JfGdieF10TLT7exLzjSOdLqV9AKwWupj_SB_xqLZY7BWjC86TpIxkoKDVrvcXVX_LJD9nTEve1SUtSxNfmJxF5SE-Lqa4JSvBd2523jBAY_Zqe4AWkFsF4RIrKdQyH28C83pSHA5iCvV5Z_IpATtFbjffTEEH4DZa_j"/>
+</div>
+<div>
+<p class="font-bold text-sm">Budi Santoso</p>
+<p class="text-xs text-slate-400">Gamer</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 relative">
+<div class="text-yellow-400 flex mb-4">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 mb-6 italic">"Harga termurah dibanding toko sebelah, tapi kualitasnya premium. CS nya juga fast respon pas aku bingung cara redeemnya."</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-gray-200 overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkh-tE-ET4M6zuq2ntmH4ZgsGp1amf0Vbq6535wGo-g-ZW3NzeDJqfb9r2vQYM2ZSJKOQMhKc3o42SCji8T8Zc0wYSyxGiQl6WMcD-MWnbHjlIW6qanRV8Zw2_-den5SA7vnhEUkrjIe3qTm2y3PdsflhcRMYoREPdcoZ1nSH1nmlcfSnD3zQXHVDTDTm_tUzYGHUjmM8YSpqLbSs8TzQDvQPu-q4kziufvTJPMbrYsp-BGMcN87wDu5eUFl1HdVerhoLnveH26T9s"/>
+</div>
+<div>
+<p class="font-bold text-sm">Siti Aminah</p>
+<p class="text-xs text-slate-400">Mahasiswa</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 relative">
+<div class="text-yellow-400 flex mb-4">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star_half</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 mb-6 italic">"Udah langganan Netflix disini 3 bulan. Aman aman aja, anti hold. Lumayan hemat budget streaming."</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-gray-200 overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUkycVj8uJpqeKtttmiaBT8yE6DpwV6AVEcOf4XELgc-FPnFrDbfT3R8-1ldu7HPoo2JX1-guRxIDZ_6Z17TK6N0WdvEwAnBS64XgWyxlBZ710-EhdafRs_epDLCdnCGmT2Jg3lOIZ_tPI8G_NVW2E0mPrRv2OJIuYSSLS9MY8VFrPrWWphpaCSrycQLKF_QOYlRxGhNmR4LD9LRZjF0aXbDxqpo_WW88mul7_msK4wDl2fD6mHneE2ontcg24m2azf2JBqO6s37Qo"/>
+</div>
+<div>
+<p class="font-bold text-sm">Kevin Wijaya</p>
+<p class="text-xs text-slate-400">Freelancer</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+<div class="container mx-auto px-4 md:px-8 max-w-[1200px]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-4 text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+<span class="text-xl font-bold">DigitalStore</span>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed mb-6">
+                            Platform marketplace produk digital otomatis #1 di Indonesia. Hemat, Cepat, dan Terpercaya.
+                        </p>
+<div class="flex gap-3">
+<a class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors" href="#">
+<!-- Facebook Icon SVG equivalent -->
+<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors" href="#">
+<!-- Twitter Icon SVG equivalent -->
+<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors" href="#">
+<!-- Instagram Icon SVG equivalent -->
+<svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.451 4.635c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-slate-900 dark:text-white mb-4">Layanan</h4>
+<ul class="flex flex-col gap-2 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Semua Produk</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Streaming</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Games</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Software</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-slate-900 dark:text-white mb-4">Dukungan</h4>
+<ul class="flex flex-col gap-2 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Pusat Bantuan</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cara Order</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Ketentuan Layanan</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Kebijakan Privasi</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-slate-900 dark:text-white mb-4">Metode Pembayaran</h4>
+<div class="flex flex-wrap gap-2">
+<div class="h-8 w-12 bg-slate-100 rounded flex items-center justify-center text-xs font-bold text-slate-500 border border-slate-200">BCA</div>
+<div class="h-8 w-12 bg-slate-100 rounded flex items-center justify-center text-xs font-bold text-slate-500 border border-slate-200">BRI</div>
+<div class="h-8 w-12 bg-slate-100 rounded flex items-center justify-center text-xs font-bold text-slate-500 border border-slate-200">QRIS</div>
+<div class="h-8 w-12 bg-slate-100 rounded flex items-center justify-center text-xs font-bold text-slate-500 border border-slate-200">DANA</div>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-slate-400">© 2023 DigitalStore. All rights reserved.</p>
+<p class="text-sm text-slate-400">Made with 💙 for Gamers</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

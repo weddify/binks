@@ -1,0 +1,164 @@
+# Task: Create SvelteKit App & Register Page
+
+- [x] Initialize SvelteKit App <!-- id: 0 -->
+  - [x] Create monorepo structure (if needed) or app in `binks/` <!-- id: 1 -->
+  - [x] Install dependencies (TailwindCSS, DaisyUI, Lucide Svelte) <!-- id: 2 -->
+- [x] Implement Register Page UI <!-- id: 3 -->
+  - [x] Analyze `code.html` for structure <!-- id: 4 -->
+  - [x] Fix Layout Alignment (Top-aligned, independent columns) <!-- id: 5 -->
+- [x] Support Multi-Quantity Credentials (Array iteration in UI) <!-- id: 6 -->
+- [x] Implement Bulk View (Table + Scroll + Copy All) <!-- id: 7 -->
+- [x] Swap Layout (Products to Right, Credentials to Left) <!-- id: 8 -->
+  - [x] Style with Tailwind & DaisyUI <!-- id: 6 -->
+- [x] Verification <!-- id: 7 -->
+  - [x] Verify UI against requirements <!-- id: 8 -->
+- [x] Refactor Configuration <!-- id: 9 -->
+  - [x] Create `src/lib/config.ts` <!-- id: 10 -->
+  - [x] Update Layout and Page to use config <!-- id: 11 -->
+- [x] Fix Homepage Layout <!-- id: 20 -->
+  - [x] Install `@tailwindcss/container-queries` <!-- id: 21 -->
+  - [x] Update `tailwind.config.ts` <!-- id: 22 -->
+- [x] Restructure Routes & Homepage <!-- id: 16 -->
+  - [x] Move `src/routes/+page.svelte` to `src/routes/register/+page.svelte` <!-- id: 17 -->
+  - [x] Create reusable components (`Navbar`, `Footer`, `ProductCard`) <!-- id: 19 -->
+  - [x] Implement Home Page at `src/routes/+page.svelte` based on design <!-- id: 18 -->
+- [x] Implement Login Page UI <!-- id: 12 -->
+  - [x] Create `apps/web/src/routes/login/+page.svelte` <!-- id: 13 -->
+  - [x] Style with Tailwind & DaisyUI <!-- id: 14 -->
+  - [x] Integrate `siteConfig` <!-- id: 15 -->
+- [x] Unify Page Styling <!-- id: 23 -->
+  - [x] Refactor `/register` to use `Navbar` and `Footer` components <!-- id: 24 -->
+  - [x] Apply Homepage aesthetic (gradients, glassmorphism) to `/login` and `/register` <!-- id: 25 -->
+- [x] Implement Parent Category Page <!-- id: 26 -->
+  - [x] Create `CategoryCard` component <!-- id: 27 -->
+  - [x] Implement `src/routes/category/[slug]/+page.svelte` <!-- id: 28 -->
+  - [x] Mock data for "Streaming" and other categories <!-- id: 29 -->
+- [x] Fix Category Page Navigation/Reactivity <!-- id: 30 -->
+  - [x] Make `categoryData` reactive to `$page.params.slug` <!-- id: 31 -->
+  - [x] Add "Gaming" mock data for testing <!-- id: 32 -->
+- [x] Refactor to Grouped List Layout <!-- id: 33 -->
+  - [x] Implement `TopFilterBar` and `ProductListItem` <!-- id: 34 -->
+  - [x] Update `/category/[slug]` logic for grouping and filtering <!-- id: 35 -->
+  - [x] Update Mock Data (Nested structure: Group -> Products) <!-- id: 36 -->
+- [x] Style Top Filter Bar to match Reference <!-- id: 37 -->
+  - [x] Implement Red/White "Select Box" aesthetic <!-- id: 38 -->
+  - [x] Apply specific gradients and borders <!-- id: 39 -->
+- [x] Implement Buy Now Modal <!-- id: 40 -->
+  - [x] Create `Button.svelte` component
+- [x] Refactor Admin pages to use `Button` component with Two-Column Layout <!-- id: 41 -->
+  - [x] Integrate Modal into `ProductListItem` <!-- id: 42 -->
+- [x] Implement Product Detail Page <!-- id: 43 -->
+  - [x] Re-add "Detail Information" button to `ProductListItem` <!-- id: 46 -->
+  - [x] Create `src/routes/product/[slug]/+page.svelte` (Expanded Layout) <!-- id: 44 -->
+  - [x] Refactor Mock Data to include Slugs <!-- id: 47 -->
+- [x] Implement Checkout & Invoice <!-- id: 50 -->
+  - [x] Create Invoice Page `src/routes/invoice/[orderId]/+page.svelte` <!-- id: 51 -->
+  - [x] Implement Polymorphic Payment (QRIS/VA) <!-- id: 52 -->
+  - [x] Add Tripay Instructions (Accordion + Tabs) <!-- id: 53 -->
+  - [x] Implement Payment Success State & Auto-Redirect <!-- id: 54 -->
+  - [x] Implement Invoice Cancellation <!-- id: 55 -->
+    - [x] Add Cancel Button to Invoice Page <!-- id: 56 -->
+    - [x] Implement Mock Cancellation Logic <!-- id: 57 -->
+    - [x] Create Cancelled UI State <!-- id: 58 -->
+- [x] Implement User Dashboard <!-- id: 60 -->
+  - [x] Create `src/routes/dashboard/+page.svelte` <!-- id: 61 -->
+  - [x] Implement "My Orders" List <!-- id: 62 -->
+  - [x] Add Filtering & Pagination (User Request) <!-- id: 64 -->
+  - [x] Implement Profile Settings (Mock) <!-- id: 63 -->
+  - [x] Make Profile Settings Interactive <!-- id: 65 -->
+    - [x] Bind inputs to state <!-- id: 66 -->
+    - [x] Implement Save simulation with Toast <!-- id: 67 -->
+- [x] Implement Order Detail Page <!-- id: 70 -->
+  - [x] Add Credentials to Mock Data <!-- id: 71 -->
+  - [x] Create `src/routes/order/[id]/+page.svelte` <!-- id: 72 -->
+  - [x] Link Dashboard to Order Detail <!-- id: 73 -->
+- [x] Implement Admin Dashboard <!-- id: 80 -->
+  - [x] Create Admin Layout `src/routes/admin/+layout.svelte` <!-- id: 81 -->
+  - [x] Create Admin Dashboard `src/routes/admin/+page.svelte` <!-- id: 82 -->
+  - [x] Create Admin Products List `src/routes/admin/products/+page.svelte` <!-- id: 83 -->
+  - [x] Implement Add Product Page `src/routes/admin/products/new/+page.svelte` <!-- id: 84 -->
+  - [x] Implement Stock Management (Credentials Upload) <!-- id: 85 -->
+  - [x] Implement Order Management (Process Orders) <!-- id: 86 -->
+  - [x] Implement Admin Customers Page `src/routes/admin/customers/+page.svelte` <!-- id: 87 -->
+  - [x] Implement Admin Settings Page `src/routes/admin/settings/+page.svelte` <!-- id: 88 -->
+  - [x] Implement Admin Settings Page `src/routes/admin/settings/+page.svelte` <!-- id: 88 -->
+  - [x] Add Rich Product Details (Warranty, Instruction, Notes) <!-- id: 90 -->
+    - [x] Update Mock Data `src/lib/data.ts` <!-- id: 91 -->
+    - [x] Update Add Product Page <!-- id: 92 -->
+  - [x] Refactor Admin Product Forms (Components & Tabs) <!-- id: 95 -->
+    - [x] Create Reusable Form Components (`Input`, `Textarea`, `Upload`, etc.) <!-- id: 96 -->
+    - [x] Refactor Add Product Page (Tabs + Components) <!-- id: 97 -->
+    - [x] Refactor Edit Product Page (Tabs + Components) <!-- id: 98 -->
+    - [x] Convert Instructions to Textarea Logic <!-- id: 99 -->
+  - [x] Refine Product Form Layout (V2) <!-- id: 100 -->
+    - [x] Targeted 'Additional Info' Tabs <!-- id: 101 -->
+    - [x] Advanced Pricing Section (Discounts & Valid Date) <!-- id: 102 -->
+    - [x] Visual Refinement: Thumbnail Layout (Media Left) <!-- id: 103 -->
+    - [x] Fix Edit Binding Bug (`slug` constant) <!-- id: 104 -->
+    - [x] Standardize Page Width (Container Match) <!-- id: 105 -->
+- [x] Implement Admin Analytics <!-- id: 110 -->
+  - [x] Install `apexcharts` <!-- id: 111 -->
+  - [x] Create `SalesChart` Component <!-- id: 112 -->
+  - [x] Create `StockWidget` Component <!-- id: 113 -->
+  - [x] Integrate into Dashboard <!-- id: 114 -->
+- [x] Implement Admin Categories <!-- id: 120 -->
+  - [x] Page: `src/routes/admin/categories/+page.svelte` <!-- id: 121 -->
+  - [x] Feature: Add/Edit/Delete Categories & Icons <!-- id: 122 -->
+- [x] Implement Admin Coupons <!-- id: 130 -->
+  - [x] Page: `src/routes/admin/coupons/+page.svelte` <!-- id: 131 -->
+  - [x] Feature: Add/Edit/Delete Coupon Codes & Usage Limits <!-- id: 132 -->
+- [x] Implement Admin Topbar <!-- id: 140 -->
+  - [x] Component: `src/lib/components/admin/TopBar.svelte` <!-- id: 141 -->
+  - [x] Layout: Refactor `src/routes/admin/+layout.svelte` to use Topbar <!-- id: 142 -->
+  - [x] Feature: Profile Dropdown & Search UI <!-- id: 143 -->
+- [x] Redesign Homepage Hero <!-- id: 150 -->
+  - [x] Layout: Full-width background image with overlay <!-- id: 151 -->
+  - [x] Layout: Full-width background image with overlay <!-- id: 151 -->
+  - [x] Style: Gradient overlay for text readability <!-- id: 152 -->
+- [x] Implement Admin Hero Management <!-- id: 160 -->
+  - [x] Store: `siteSettings.svelte.ts` for mock data <!-- id: 161 -->
+  - [x] UI: Hero Configuration Section in `admin/settings` <!-- id: 162 -->
+  - [x] Feature: Add/Remove/Edit Slides <!-- id: 163 -->
+- [x] Refactor Settings Structure <!-- id: 170 -->
+  - [x] Layout: Create `admin/settings/+layout.svelte` with tabs <!-- id: 171 -->
+  - [x] Page: Extract `general` settings <!-- id: 172 -->
+  - [x] Page: Extract `payment` settings <!-- id: 173 -->
+  - [x] Page: Extract `hero` settings <!-- id: 174 -->
+  - [x] Redirect: Update root settings page <!-- id: 175 -->
+- [x] UI Consistency Standardization <!-- id: 180 -->
+  - [x] Standardize Page Titles (`text-3xl font-black`) <!-- id: 181 -->
+  - [x] Standardize Input Fields (`rounded-xl py-2.5`) <!-- id: 182 -->
+- [x] Refine Admin Spacing <!-- id: 183 -->
+  - [x] Reduce Layout Padding (admin/+layout.svelte) <!-- id: 184 -->
+  - [x] Tighten Page Vertical Spacing (`space-y-6` -> `space-y-3`) <!-- id: 185 -->
+- [x] Implement Error Pages (404 & 500) <!-- id: 190 -->
+  - [x] Create `src/routes/+error.svelte` <!-- id: 191 -->
+  - [x] Style 404 Not Found State <!-- id: 192 -->
+  - [x] Style 500 Server Error State <!-- id: 193 -->
+- [x] Implement Theme Switching <!-- id: 200 -->
+  - [x] Configure Tailwind with `cupcake` and `sunset` <!-- id: 201 -->
+  - [x] Create `ThemeToggle` Component <!-- id: 202 -->
+  - [x] Integrate Toggle into Navbars <!-- id: 203 -->
+- [x] Standardize Admin Search Layout <!-- id: 210 -->
+  - [x] Update Products Page <!-- id: 211 -->
+  - [x] Update Customers Page <!-- id: 212 -->
+  - [x] Update Orders/Coupons Page <!-- id: 213 -->
+  - [x] Update Customers Page <!-- id: 212 -->
+  - [x] Update Orders/Coupons Page <!-- id: 213 -->
+- [x] Fix Broken Frontend Links <!-- id: 220 -->
+  - [x] Navbar: Connect Cart & Mobile Menu <!-- id: 221 -->
+  - [x] Hero: Activate Buttons <!-- id: 222 -->
+  - [x] Footer: Fix Placeholder Links <!-- id: 223 -->
+- [x] Implement Homepage Product Interactions <!-- id: 230 -->
+
+  - [x] Connect "Detail" Button to Product Page <!-- id: 231 -->
+  - [x] Connect "Beli" Button to Buy Modal/Cart <!-- id: 232 -->
+
+- [ ] Phase 2: Frontend Refinement & Polish <!-- id: 300 -->
+
+  - [ ] Identify & Fix UI Issues <!-- id: 301 -->
+  - [ ] Optimize Responsive Layouts <!-- id: 302 -->
+
+- [ ] Phase 3: Backend & Logic (Drizzle ORM) <!-- id: 400 -->
+  - [ ] Setup Drizzle ORM & Supabase <!-- id: 401 -->
+  - [ ] Implement Auth (Email/Pass + Telegram?) <!-- id: 402 -->
