@@ -119,10 +119,10 @@
   </div>
 
   <!-- Analytics & Content Grid -->
-  <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 xl:grid-cols-3 gap-3">
       
       <!-- Left Column: Sales & Recent Orders -->
-      <div class="xl:col-span-2 space-y-6">
+      <div class="xl:col-span-2 space-y-3">
           <!-- Sales Chart -->
           <SalesChart />
 

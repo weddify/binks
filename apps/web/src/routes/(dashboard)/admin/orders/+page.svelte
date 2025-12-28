@@ -67,7 +67,7 @@
   <!-- Orders Table -->
   <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
      <div class="overflow-x-auto">
-        <table class="max-w-3xl text-left border-collapse">
+        <table class="w-full text-left border-collapse">
            <thead class="bg-slate-50 dark:bg-slate-900/50 text-xs font-bold text-slate-500 uppercase tracking-wider">
               <tr>
                  <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700">Order ID</th>

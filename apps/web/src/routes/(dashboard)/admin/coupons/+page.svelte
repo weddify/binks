@@ -112,7 +112,7 @@
   </div>
 
   <!-- Coupon List -->
-  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
       {#each filteredCoupons as coupon}
           <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md border border-slate-100 dark:border-slate-700 overflow-hidden group relative hover:border-primary/50 transition-colors">
               <!-- Active Status Strip -->

@@ -1,0 +1,294 @@
+2025-12-28T04:06:31.159Z	Initializing build environment...
+2025-12-28T04:06:33.558Z	Success: Finished initializing build environment
+2025-12-28T04:06:34.144Z	Cloning repository...
+2025-12-28T04:06:35.156Z	Restoring from dependencies cache
+2025-12-28T04:06:35.158Z	Restoring from build output cache
+2025-12-28T04:06:35.161Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2025-12-28T04:06:35.462Z	Installing project dependencies: npm clean-install --progress=false
+2025-12-28T04:06:43.564Z	
+2025-12-28T04:06:43.564Z	> web@0.0.1 prepare
+2025-12-28T04:06:43.564Z	> svelte-kit sync || echo ''
+2025-12-28T04:06:43.564Z	
+2025-12-28T04:06:51.591Z	
+2025-12-28T04:06:51.591Z	added 194 packages, and audited 195 packages in 16s
+2025-12-28T04:06:51.591Z	
+2025-12-28T04:06:51.591Z	41 packages are looking for funding
+2025-12-28T04:06:51.591Z	  run `npm fund` for details
+2025-12-28T04:06:51.605Z	
+2025-12-28T04:06:51.606Z	3 low severity vulnerabilities
+2025-12-28T04:06:51.606Z	
+2025-12-28T04:06:51.606Z	To address all issues (including breaking changes), run:
+2025-12-28T04:06:51.606Z	  npm audit fix --force
+2025-12-28T04:06:51.607Z	
+2025-12-28T04:06:51.607Z	Run `npm audit` for details.
+2025-12-28T04:06:51.828Z	Executing user build command: npm run build
+2025-12-28T04:06:52.114Z	
+2025-12-28T04:06:52.114Z	> web@0.0.1 build
+2025-12-28T04:06:52.114Z	> vite build
+2025-12-28T04:06:52.114Z	
+2025-12-28T04:06:54.236Z	vite v7.3.0 building ssr environment for production...
+2025-12-28T04:06:54.302Z	transforming...
+2025-12-28T04:06:54.848Z	4:06:54 AM [vite-plugin-svelte] src/routes/dashboard/+page.svelte:386:36 '#' is not a valid href attribute
+2025-12-28T04:06:54.848Z	https://svelte.dev/e/a11y_invalid_attribute
+2025-12-28T04:06:54.848Z	384:                                     <code class="text-sm font-mono font-bold text-blue-600 dark:text-blue-400 truncate max-w-[200px]">https://spotify.com/invite/xyz...</code>
+2025-12-28T04:06:54.848Z	385:                                  </div>
+2025-12-28T04:06:54.854Z	386:                                  <a href="#" class="p-1.5 hover:bg-white dark:hover:bg-slate-800 rounded transition-colors text-slate-400 hover:text-primary">
+2025-12-28T04:06:54.855Z	                                                 ^
+2025-12-28T04:06:54.855Z	387:                                     <ExternalLink class="size-4" />
+2025-12-28T04:06:54.855Z	388:                                  </a>
+2025-12-28T04:06:55.159Z	4:06:55 AM [vite-plugin-svelte] src/lib/components/form/FormCheckbox.svelte:2:13 Component has unused export property 'id'. If it is for external reference only, please consider using `export const id`
+2025-12-28T04:06:55.159Z	https://svelte.dev/e/export_let_unused
+2025-12-28T04:06:55.160Z	1: <script lang="ts">
+2025-12-28T04:06:55.162Z	2:   export let id: string; // Used for a11y implicitly
+2025-12-28T04:06:55.162Z	                          ^
+2025-12-28T04:06:55.162Z	3:   export let label: string;
+2025-12-28T04:06:55.163Z	4:   export let description: string = "";
+2025-12-28T04:07:03.905Z	
+2025-12-28T04:07:03.905Z	🌼   daisyUI 4.12.14
+2025-12-28T04:07:04.127Z	├─ ✔︎ 2 themes added		https://daisyui.com/docs/themes
+2025-12-28T04:07:04.128Z	╰─ ★ Star daisyUI on GitHub	https://github.com/saadeghi/daisyui
+2025-12-28T04:07:04.128Z	
+2025-12-28T04:07:03.905Z	
+2025-12-28T04:07:03.905Z	🌼   daisyUI 4.12.14
+2025-12-28T04:07:04.127Z	├─ ✔︎ 2 themes added		https://daisyui.com/docs/themes
+2025-12-28T04:07:04.128Z	╰─ ★ Star daisyUI on GitHub	https://github.com/saadeghi/daisyui
+2025-12-28T04:07:04.128Z	
+2025-12-28T04:07:04.239Z	
+2025-12-28T04:07:04.239Z	🌼   daisyUI 4.12.14
+2025-12-28T04:07:04.371Z	├─ ✔︎ 2 themes added		https://daisyui.com/docs/themes
+2025-12-28T04:07:04.373Z	╰─ ❤︎ Support daisyUI project:	https://opencollective.com/daisyui
+2025-12-28T04:07:04.373Z	
+2025-12-28T04:07:06.805Z	✓ 3906 modules transformed.
+2025-12-28T04:07:07.055Z	rendering chunks...
+2025-12-28T04:07:09.183Z	vite v7.3.0 building client environment for production...
+2025-12-28T04:07:09.208Z	transforming...
+2025-12-28T04:07:09.682Z	4:07:09 AM [vite-plugin-svelte] src/routes/dashboard/+page.svelte:386:36 '#' is not a valid href attribute
+2025-12-28T04:07:09.682Z	https://svelte.dev/e/a11y_invalid_attribute
+2025-12-28T04:07:09.686Z	384:                                     <code class="text-sm font-mono font-bold text-blue-600 dark:text-blue-400 truncate max-w-[200px]">https://spotify.com/invite/xyz...</code>
+2025-12-28T04:07:09.686Z	385:                                  </div>
+2025-12-28T04:07:09.686Z	386:                                  <a href="#" class="p-1.5 hover:bg-white dark:hover:bg-slate-800 rounded transition-colors text-slate-400 hover:text-primary">
+2025-12-28T04:07:09.686Z	                                                 ^
+2025-12-28T04:07:09.686Z	387:                                     <ExternalLink class="size-4" />
+2025-12-28T04:07:09.687Z	388:                                  </a>
+2025-12-28T04:07:10.068Z	4:07:10 AM [vite-plugin-svelte] src/lib/components/form/FormCheckbox.svelte:2:13 Component has unused export property 'id'. If it is for external reference only, please consider using `export const id`
+2025-12-28T04:07:10.068Z	https://svelte.dev/e/export_let_unused
+2025-12-28T04:07:10.071Z	1: <script lang="ts">
+2025-12-28T04:07:10.071Z	2:   export let id: string; // Used for a11y implicitly
+2025-12-28T04:07:10.071Z	                          ^
+2025-12-28T04:07:10.071Z	3:   export let label: string;
+2025-12-28T04:07:10.071Z	4:   export let description: string = "";
+2025-12-28T04:07:23.672Z	✓ 3897 modules transformed.
+2025-12-28T04:07:24.008Z	rendering chunks...
+2025-12-28T04:07:24.347Z	computing gzip size...
+2025-12-28T04:07:24.414Z	.svelte-kit/output/client/_app/version.json                                 0.03 kB │ gzip:   0.05 kB
+2025-12-28T04:07:24.414Z	.svelte-kit/output/client/.vite/manifest.json                              32.47 kB │ gzip:   3.28 kB
+2025-12-28T04:07:24.414Z	.svelte-kit/output/client/_app/immutable/assets/6.CJ1vizu0.css              0.24 kB │ gzip:   0.14 kB
+2025-12-28T04:07:24.414Z	.svelte-kit/output/client/_app/immutable/assets/BuyNowModal.CNuN0FSw.css    0.33 kB │ gzip:   0.15 kB
+2025-12-28T04:07:24.415Z	.svelte-kit/output/client/_app/immutable/assets/8.CBEOFNvc.css              0.33 kB │ gzip:   0.18 kB
+2025-12-28T04:07:24.415Z	.svelte-kit/output/client/_app/immutable/assets/7.DHupfQ0B.css              0.34 kB │ gzip:   0.18 kB
+2025-12-28T04:07:24.415Z	.svelte-kit/output/client/_app/immutable/assets/0.7jX_VC4B.css            157.26 kB │ gzip:  24.87 kB
+2025-12-28T04:07:24.415Z	.svelte-kit/output/client/_app/immutable/chunks/69_IOA4Y.js                 0.03 kB │ gzip:   0.05 kB
+2025-12-28T04:07:24.415Z	.svelte-kit/output/client/_app/immutable/chunks/DIeogL5L.js                 0.06 kB │ gzip:   0.08 kB
+2025-12-28T04:07:24.415Z	.svelte-kit/output/client/_app/immutable/chunks/DsnmJJEf.js                 0.07 kB │ gzip:   0.08 kB
+2025-12-28T04:07:24.415Z	.svelte-kit/output/client/_app/immutable/entry/start.DMGz2P3l.js            0.08 kB │ gzip:   0.09 kB
+2025-12-28T04:07:24.415Z	.svelte-kit/output/client/_app/immutable/nodes/14.DPzO339H.js               0.10 kB │ gzip:   0.10 kB
+2025-12-28T04:07:24.415Z	.svelte-kit/output/client/_app/immutable/chunks/BhwwknOJ.js                 0.19 kB │ gzip:   0.17 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/DXuQFgUV.js                 0.20 kB │ gzip:   0.18 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/Cn2GU7wX.js                 0.23 kB │ gzip:   0.16 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/DWvCzEVT.js                 0.30 kB │ gzip:   0.22 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/DrU5WRdY.js                 0.32 kB │ gzip:   0.27 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/CCWCtV5U.js                 0.38 kB │ gzip:   0.28 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/Biath8jd.js                 0.45 kB │ gzip:   0.32 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/BOtD9m6J.js                 0.45 kB │ gzip:   0.32 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/CSJVbpZY.js                 0.45 kB │ gzip:   0.33 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/DUU8wofM.js                 0.45 kB │ gzip:   0.32 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/BzjcVwHf.js                 0.46 kB │ gzip:   0.33 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/D0sUIw7K.js                 0.47 kB │ gzip:   0.34 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/BNKQJttG.js                 0.47 kB │ gzip:   0.34 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/B5CbdN-2.js                 0.47 kB │ gzip:   0.34 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/DtoL3nLq.js                 0.48 kB │ gzip:   0.35 kB
+2025-12-28T04:07:24.416Z	.svelte-kit/output/client/_app/immutable/chunks/BwqjN8Xo.js                 0.48 kB │ gzip:   0.34 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/_MRU_qYi.js                 0.49 kB │ gzip:   0.34 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/BLjo5tiq.js                 0.49 kB │ gzip:   0.34 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/km_knC5h.js                 0.50 kB │ gzip:   0.34 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/B00Ce1p9.js                 0.51 kB │ gzip:   0.37 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/D_hL6Xyc.js                 0.51 kB │ gzip:   0.36 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/TavTFg2l.js                 0.53 kB │ gzip:   0.36 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/ebruOEJ6.js                 0.53 kB │ gzip:   0.37 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/u2sxsz1Y.js                 0.54 kB │ gzip:   0.36 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/CCoTb797.js                 0.54 kB │ gzip:   0.39 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/BKsMFTVd.js                 0.55 kB │ gzip:   0.37 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/4K5Ot48_.js                 0.56 kB │ gzip:   0.34 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/CpMeeMGx.js                 0.56 kB │ gzip:   0.38 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/jlcb7YxV.js                 0.56 kB │ gzip:   0.38 kB
+2025-12-28T04:07:24.417Z	.svelte-kit/output/client/_app/immutable/chunks/w2oFP8WC.js                 0.57 kB │ gzip:   0.40 kB
+2025-12-28T04:07:24.418Z	.svelte-kit/output/client/_app/immutable/chunks/DTFlAciE.js                 0.58 kB │ gzip:   0.39 kB
+2025-12-28T04:07:24.418Z	.svelte-kit/output/client/_app/immutable/chunks/BT5n8Woy.js                 0.59 kB │ gzip:   0.38 kB
+2025-12-28T04:07:24.418Z	.svelte-kit/output/client/_app/immutable/chunks/B6klPIiJ.js                 0.59 kB │ gzip:   0.40 kB
+2025-12-28T04:07:24.418Z	.svelte-kit/output/client/_app/immutable/chunks/C0DLFfCb.js                 0.59 kB │ gzip:   0.39 kB
+2025-12-28T04:07:24.418Z	.svelte-kit/output/client/_app/immutable/chunks/CqopYAzg.js                 0.59 kB │ gzip:   0.38 kB
+2025-12-28T04:07:24.418Z	.svelte-kit/output/client/_app/immutable/chunks/DPGQt2ji.js                 0.60 kB │ gzip:   0.39 kB
+2025-12-28T04:07:24.418Z	.svelte-kit/output/client/_app/immutable/chunks/DV4_J2HQ.js                 0.62 kB │ gzip:   0.40 kB
+2025-12-28T04:07:24.418Z	.svelte-kit/output/client/_app/immutable/chunks/BWtv2gbt.js                 0.62 kB │ gzip:   0.41 kB
+2025-12-28T04:07:24.418Z	.svelte-kit/output/client/_app/immutable/chunks/B3E64jAu.js                 0.63 kB │ gzip:   0.44 kB
+2025-12-28T04:07:24.418Z	.svelte-kit/output/client/_app/immutable/chunks/DDTfr9GU.js                 0.63 kB │ gzip:   0.40 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/Dim_y8yV.js                 0.63 kB │ gzip:   0.43 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/Cvew_4Lr.js                 0.64 kB │ gzip:   0.42 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/BP319cPe.js                 0.99 kB │ gzip:   0.52 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/8LKohWyt.js                 1.04 kB │ gzip:   0.52 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/JlgcAtIm.js                 1.14 kB │ gzip:   0.50 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/PPVm8Dsz.js                 1.23 kB │ gzip:   0.71 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/nodes/18.DIjPRAAN.js               1.26 kB │ gzip:   0.69 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/nodes/5.DckxgMj9.js                1.73 kB │ gzip:   0.88 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/Zef7kVge.js                 2.14 kB │ gzip:   1.03 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/nodes/3.CFJ9udb9.js                2.28 kB │ gzip:   1.18 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/D8kcswKQ.js                 2.54 kB │ gzip:   0.99 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/DnO2w_nQ.js                 2.78 kB │ gzip:   1.22 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/D-8QxGBP.js                 3.11 kB │ gzip:   1.22 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/nodes/1.C1IH-Frd.js                4.42 kB │ gzip:   2.06 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/DKk_eo51.js                 4.43 kB │ gzip:   2.06 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/nodes/17.HQ0mEOnJ.js               4.47 kB │ gzip:   1.59 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/nodes/23.DEY7QJoL.js               4.60 kB │ gzip:   1.72 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/u7WgaFBF.js                 5.51 kB │ gzip:   1.99 kB
+2025-12-28T04:07:24.420Z	.svelte-kit/output/client/_app/immutable/chunks/BAeIaTwm.js                 5.96 kB │ gzip:   1.89 kB
+2025-12-28T04:07:24.421Z	.svelte-kit/output/client/_app/immutable/nodes/16.BFua8yIv.js               6.06 kB │ gzip:   2.01 kB
+2025-12-28T04:07:24.421Z	.svelte-kit/output/client/_app/immutable/chunks/mpdARISc.js                 6.33 kB │ gzip:   2.25 kB
+2025-12-28T04:07:24.421Z	.svelte-kit/output/client/_app/immutable/nodes/9.yniwQhhq.js                6.50 kB │ gzip:   2.44 kB
+2025-12-28T04:07:24.421Z	.svelte-kit/output/client/_app/immutable/chunks/Bu4ZDEji.js                 6.59 kB │ gzip:   1.83 kB
+2025-12-28T04:07:24.421Z	.svelte-kit/output/client/_app/immutable/nodes/10.CvC7NAXu.js               6.67 kB │ gzip:   2.47 kB
+2025-12-28T04:07:24.421Z	.svelte-kit/output/client/_app/immutable/nodes/26.D-X3dtaI.js               6.87 kB │ gzip:   2.09 kB
+2025-12-28T04:07:24.421Z	.svelte-kit/output/client/_app/immutable/nodes/13.Df9-JUs_.js               7.88 kB │ gzip:   2.89 kB
+2025-12-28T04:07:24.421Z	.svelte-kit/output/client/_app/immutable/nodes/11.DZ0Mggvw.js               7.98 kB │ gzip:   2.94 kB
+2025-12-28T04:07:24.421Z	.svelte-kit/output/client/_app/immutable/nodes/20.B_3Cv3Yy.js               8.58 kB │ gzip:   3.14 kB
+2025-12-28T04:07:24.423Z	.svelte-kit/output/client/_app/immutable/chunks/Bn87zCSp.js                 9.85 kB │ gzip:   3.78 kB
+2025-12-28T04:07:24.423Z	.svelte-kit/output/client/_app/immutable/nodes/25.C4hT6A7M.js               9.89 kB │ gzip:   3.55 kB
+2025-12-28T04:07:24.423Z	.svelte-kit/output/client/_app/immutable/nodes/19.C8hxL8M2.js              11.57 kB │ gzip:   4.09 kB
+2025-12-28T04:07:24.423Z	.svelte-kit/output/client/_app/immutable/nodes/8.B3hkc0W5.js               12.00 kB │ gzip:   4.10 kB
+2025-12-28T04:07:24.423Z	.svelte-kit/output/client/_app/immutable/nodes/15.D_QaTg_y.js              12.03 kB │ gzip:   4.28 kB
+2025-12-28T04:07:24.423Z	.svelte-kit/output/client/_app/immutable/nodes/7.BfHV9l7v.js               12.07 kB │ gzip:   3.83 kB
+2025-12-28T04:07:24.424Z	.svelte-kit/output/client/_app/immutable/nodes/2.BYobujD3.js               12.93 kB │ gzip:   4.22 kB
+2025-12-28T04:07:24.424Z	.svelte-kit/output/client/_app/immutable/chunks/DremvX5D.js                12.97 kB │ gzip:   5.24 kB
+2025-12-28T04:07:24.424Z	.svelte-kit/output/client/_app/immutable/chunks/X9inI3HF.js                13.00 kB │ gzip:   5.94 kB
+2025-12-28T04:07:24.424Z	.svelte-kit/output/client/_app/immutable/nodes/12.Fe1J6MWh.js              13.96 kB │ gzip:   4.80 kB
+2025-12-28T04:07:24.424Z	.svelte-kit/output/client/_app/immutable/chunks/BshTbwGn.js                15.18 kB │ gzip:   4.37 kB
+2025-12-28T04:07:24.424Z	.svelte-kit/output/client/_app/immutable/entry/app.CW3Xo6Ij.js             16.04 kB │ gzip:   5.92 kB
+2025-12-28T04:07:24.424Z	.svelte-kit/output/client/_app/immutable/nodes/6.D3dHd8-1.js               16.05 kB │ gzip:   4.94 kB
+2025-12-28T04:07:24.424Z	.svelte-kit/output/client/_app/immutable/nodes/22.DD6JGJrs.js              18.69 kB │ gzip:   6.01 kB
+2025-12-28T04:07:24.424Z	.svelte-kit/output/client/_app/immutable/nodes/4.DdDIJKXy.js               19.06 kB │ gzip:   7.15 kB
+2025-12-28T04:07:24.424Z	.svelte-kit/output/client/_app/immutable/nodes/24.C2alFohl.js              19.57 kB │ gzip:   5.83 kB
+2025-12-28T04:07:24.425Z	.svelte-kit/output/client/_app/immutable/nodes/0.DIVtMpSw.js               23.92 kB │ gzip:   9.09 kB
+2025-12-28T04:07:24.425Z	.svelte-kit/output/client/_app/immutable/chunks/CLCtnV6Z.js                24.65 kB │ gzip:   9.64 kB
+2025-12-28T04:07:24.425Z	.svelte-kit/output/client/_app/immutable/nodes/21.CsnQ7rJh.js              29.86 kB │ gzip:   7.62 kB
+2025-12-28T04:07:24.425Z	.svelte-kit/output/client/_app/immutable/chunks/B4-OeYN7.js                30.53 kB │ gzip:  11.96 kB
+2025-12-28T04:07:24.425Z	.svelte-kit/output/client/_app/immutable/chunks/CzFgh7Xk.js               579.35 kB │ gzip: 157.28 kB
+2025-12-28T04:07:24.426Z	
+2025-12-28T04:07:24.426Z	(!) Some chunks are larger than 500 kB after minification. Consider:
+2025-12-28T04:07:24.426Z	- Using dynamic import() to code-split the application
+2025-12-28T04:07:24.426Z	- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2025-12-28T04:07:24.426Z	- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2025-12-28T04:07:24.426Z	✓ built in 15.24s
+2025-12-28T04:07:26.240Z	.svelte-kit/output/server/.vite/manifest.json                                    21.37 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/_app/immutable/assets/_page.CJ1vizu0.css                0.24 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/_app/immutable/assets/BuyNowModal.CNuN0FSw.css          0.33 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/_app/immutable/assets/_page.CBEOFNvc.css                0.33 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/_app/immutable/assets/_page.DHupfQ0B.css                0.34 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/_app/immutable/assets/_layout.BLL3PlMw.css            156.44 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/chunks/false.js                                         0.05 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/entries/pages/admin/settings/_page.svelte.js            0.08 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/entries/pages/admin/settings/_page.server.ts.js         0.13 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/chunks/html.js                                          0.14 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/entries/matchers/legal.js                               0.16 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/entries/pages/(p)/_slug_legal_/_page.server.ts.js       0.30 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/internal.js                                             0.33 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/chunks/state.svelte.js                                  0.38 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/chunks/config.js                                        0.49 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/chunks/environment.js                                   0.62 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/chunks/stores.js                                        0.69 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/chunks/utils.js                                         1.15 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/entries/pages/cart/_page.svelte.js                      1.24 kB
+2025-12-28T04:07:26.241Z	.svelte-kit/output/server/chunks/chevron-left.js                                  1.49 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/chevron-right.js                                 1.49 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/plus.js                                          1.50 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/x.js                                             1.50 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/arrow-left.js                                    1.56 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/arrow-right.js                                   1.56 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/arrow-up-right.js                                1.57 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/search.js                                        1.57 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/trending-up.js                                   1.58 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/circle-check.js                                  1.60 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/info.js                                          1.62 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/user.js                                          1.62 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/circle-x.js                                      1.64 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/mail.js                                          1.69 kB
+2025-12-28T04:07:26.242Z	.svelte-kit/output/server/chunks/credit-card.js                                   1.70 kB
+2025-12-28T04:07:26.243Z	.svelte-kit/output/server/chunks/lock.js                                          1.73 kB
+2025-12-28T04:07:26.243Z	.svelte-kit/output/server/chunks/globe.js                                         1.73 kB
+2025-12-28T04:07:26.243Z	.svelte-kit/output/server/chunks/folder.js                                        1.74 kB
+2025-12-28T04:07:26.243Z	.svelte-kit/output/server/chunks/calendar.js                                      1.76 kB
+2025-12-28T04:07:26.243Z	.svelte-kit/output/server/entries/pages/(p)/_slug_legal_/_page.svelte.js          1.78 kB
+2025-12-28T04:07:26.243Z	.svelte-kit/output/server/chunks/eye.js                                           1.79 kB
+2025-12-28T04:07:26.243Z	.svelte-kit/output/server/chunks/triangle-alert.js                                1.81 kB
+2025-12-28T04:07:26.243Z	.svelte-kit/output/server/chunks/copy.js                                          1.83 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/pencil.js                                        1.84 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/users.js                                         1.84 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/receipt.js                                       1.86 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/house.js                                         1.86 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/trash-2.js                                       1.87 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/shopping-cart.js                                 1.89 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/headset.js                                       1.89 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/save.js                                          1.93 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/shield-check.js                                  1.96 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/package.js                                       2.02 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/monitor-play.js                                  2.03 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/ConfirmModal.js                                  2.28 kB
+2025-12-28T04:07:26.245Z	.svelte-kit/output/server/chunks/Icon.js                                          2.33 kB
+2025-12-28T04:07:26.246Z	.svelte-kit/output/server/chunks/Button.js                                        3.16 kB
+2025-12-28T04:07:26.246Z	.svelte-kit/output/server/entries/pages/admin/settings/payment/_page.svelte.js    3.47 kB
+2025-12-28T04:07:26.246Z	.svelte-kit/output/server/chunks/settings.js                                      3.89 kB
+2025-12-28T04:07:26.246Z	.svelte-kit/output/server/chunks/ThemeToggle.js                                   3.94 kB
+2025-12-28T04:07:26.246Z	.svelte-kit/output/server/entries/pages/admin/settings/_layout.svelte.js          4.20 kB
+2025-12-28T04:07:26.246Z	.svelte-kit/output/server/entries/pages/login/_page.svelte.js                     4.31 kB
+2025-12-28T04:07:26.246Z	.svelte-kit/output/server/chunks/legal.js                                         4.86 kB
+2025-12-28T04:07:26.246Z	.svelte-kit/output/server/chunks/Navbar.js                                        5.01 kB
+2025-12-28T04:07:26.246Z	.svelte-kit/output/server/chunks/exports.js                                       5.57 kB
+2025-12-28T04:07:26.251Z	.svelte-kit/output/server/entries/pages/admin/settings/general/_page.svelte.js    6.43 kB
+2025-12-28T04:07:26.251Z	.svelte-kit/output/server/entries/pages/register/_page.svelte.js                  6.50 kB
+2025-12-28T04:07:26.251Z	.svelte-kit/output/server/entries/pages/admin/settings/content/_page.svelte.js    6.60 kB
+2025-12-28T04:07:26.251Z	.svelte-kit/output/server/entries/pages/admin/orders/_page.svelte.js              7.33 kB
+2025-12-28T04:07:26.251Z	.svelte-kit/output/server/entries/pages/checkout/_page.svelte.js                  7.42 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/entries/pages/_error.svelte.js                          7.50 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/chunks/FormImageUpload.js                               8.42 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/entries/pages/admin/customers/_page.svelte.js           9.40 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/entries/pages/admin/products/new/_page.svelte.js        9.59 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/chunks/payments.js                                     10.26 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/chunks/Footer.js                                       10.55 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/entries/pages/admin/products/_page.svelte.js           11.15 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/entries/pages/product/_slug_/_page.svelte.js           11.86 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/entries/pages/admin/products/_slug_/_page.svelte.js    12.60 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/entries/pages/admin/_layout.svelte.js                  14.66 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/entries/pages/category/_slug_/_page.svelte.js          14.70 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/entries/pages/admin/categories/_page.svelte.js         14.75 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/entries/pages/admin/coupons/_page.svelte.js            14.95 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/chunks/data.js                                         15.64 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/entries/pages/admin/_page.svelte.js                    16.53 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/chunks/shared.js                                       17.70 kB
+2025-12-28T04:07:26.252Z	.svelte-kit/output/server/chunks/BuyNowModal.js                                  18.70 kB
+2025-12-28T04:07:26.253Z	.svelte-kit/output/server/remote-entry.js                                        18.87 kB
+2025-12-28T04:07:26.253Z	.svelte-kit/output/server/entries/pages/dashboard/_page.svelte.js                20.07 kB
+2025-12-28T04:07:26.253Z	.svelte-kit/output/server/entries/pages/order/_id_/_page.svelte.js               23.78 kB
+2025-12-28T04:07:26.253Z	.svelte-kit/output/server/entries/pages/invoice/_orderId_/_page.svelte.js        24.58 kB
+2025-12-28T04:07:26.253Z	.svelte-kit/output/server/entries/pages/_page.svelte.js                          25.36 kB
+2025-12-28T04:07:26.253Z	.svelte-kit/output/server/chunks/internal.js                                     30.28 kB
+2025-12-28T04:07:26.253Z	.svelte-kit/output/server/entries/pages/_layout.svelte.js                        35.10 kB
+2025-12-28T04:07:26.253Z	.svelte-kit/output/server/chunks/index.js                                        83.65 kB
+2025-12-28T04:07:26.253Z	.svelte-kit/output/server/index.js                                              128.01 kB
+2025-12-28T04:07:26.253Z	✓ built in 31.98s
+2025-12-28T04:07:26.253Z	
+2025-12-28T04:07:26.253Z	Run npm run preview to preview your production build locally.
+2025-12-28T04:07:26.258Z	
+2025-12-28T04:07:26.258Z	> Using @sveltejs/adapter-cloudflare
+2025-12-28T04:07:26.295Z	  ✔ done
+2025-12-28T04:07:26.562Z	Success: Build command completed
+2025-12-28T04:07:26.702Z	Executing user deploy command: Skipping custom deploy
+2025-12-28T04:07:26.705Z	/bin/sh: 1: Skipping: not found
+2025-12-28T04:07:26.708Z	Failed: error occurred while running deploy command
