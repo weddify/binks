@@ -219,6 +219,11 @@ export const findProductBySlug = (slug: string): Product | undefined => {
 export const userOrders = [
   {
     id: "INV-20231201-001",
+    user: {
+      name: "Alex Johnson",
+      email: "alex.j@example.com",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
+    },
     date: "12 Dec 2023",
     items: "Netflix Premium (1 Month)",
     total: 36500,
@@ -248,6 +253,11 @@ export const userOrders = [
   },
   {
     id: "INV-20231220-402",
+    user: {
+      name: "Sarah Williams",
+      email: "sarah.w@example.com",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+    },
     date: "20 Dec 2023",
     items: "Spotify Individual (3 Months)",
     total: 165000,
@@ -273,6 +283,11 @@ export const userOrders = [
   },
   {
     id: "INV-20231115-882",
+    user: {
+      name: "Michael Brown",
+      email: "m.brown@example.com",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael",
+    },
     date: "15 Nov 2023",
     items: "Mobile Legends 100 Diamonds",
     total: 28000,
