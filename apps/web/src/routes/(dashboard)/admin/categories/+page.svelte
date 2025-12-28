@@ -1,6 +1,6 @@
 <script lang="ts">
   import { database } from '$lib/data';
-  import { Plus, Search, Pencil, Trash2, Folder, MoreVertical, LayoutGrid, List } from 'lucide-svelte';
+  import { Plus, Search, Pencil, Trash2, Folder, MoreVertical, LayoutGrid, List, X } from 'lucide-svelte';
   import Button from '$lib/components/Button.svelte';
 
   // Transform database object to array for display
@@ -183,8 +183,8 @@
         <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-md overflow-hidden animate-scale-up">
             <div class="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
                 <h3 class="text-xl font-bold text-slate-900 dark:text-white">{isEditing ? 'Edit Category' : 'Add New Category'}</h3>
-                <button onclick={() => isModalOpen = false} class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-                    ✕
+                <button onclick={() => isModalOpen = false} class="p-2 bg-slate-100 dark:bg-slate-700 rounded-full text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+                   <X class="size-5" />
                 </button>
             </div>
             <div class="p-6 space-y-4">

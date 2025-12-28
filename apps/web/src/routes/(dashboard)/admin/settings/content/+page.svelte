@@ -1,7 +1,7 @@
 <script lang="ts">
   import { siteSettings } from '$lib/stores/siteSettings.svelte';
   import { siteConfig } from '$lib/config';
-  import { Save, CheckCircle2, XCircle, MonitorPlay } from 'lucide-svelte';
+  import { Save, CheckCircle2, XCircle, MonitorPlay, X } from 'lucide-svelte';
   import { slide } from 'svelte/transition';
 
   let isSaving = $state(false);
@@ -138,8 +138,8 @@
           <div class="relative bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden border border-slate-200 dark:border-slate-700 pointer-events-auto">
               <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between bg-slate-50 dark:bg-slate-900/50">
                   <h3 class="font-bold text-lg">Add New Slide</h3>
-                  <button onclick={() => isAddSlideOpen = false} class="text-slate-400 hover:text-slate-600 dark:hover:text-white">
-                      <XCircle class="size-5" />
+                  <button onclick={() => isAddSlideOpen = false} class="p-2 bg-white dark:bg-slate-800 rounded-full text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors border border-slate-200 dark:border-slate-700">
+                      <X class="size-5" />
                   </button>
               </div>
               <div class="p-6 space-y-4">
