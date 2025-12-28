@@ -40,16 +40,16 @@
      </div>
   </div>
 
-  <!-- Stats Grid -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+   <!-- Stats Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
      <!-- Revenue -->
      <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-md border border-slate-100 dark:border-slate-700">
         <div class="flex items-start justify-between">
-            <div class="flex flex-col">
+            <div class="flex flex-col min-w-0">
                 <span class="text-slate-500 dark:text-slate-400 text-sm font-semibold mb-1">Total Revenue</span>
-                <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-100">{formatPrice(totalRevenue)}</h3>
+                <h3 class="text-xl xl:text-2xl font-bold text-slate-800 dark:text-slate-100 truncate" title={formatPrice(totalRevenue)}>{formatPrice(totalRevenue)}</h3>
             </div>
-            <div class="size-10 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center border border-blue-100 dark:border-blue-800/50">
+            <div class="size-10 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center border border-blue-100 dark:border-blue-800/50 flex-shrink-0 ml-2">
                  <DollarSign class="size-5" />
             </div>
         </div>
@@ -64,11 +64,11 @@
      <!-- Orders -->
      <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-md border border-slate-100 dark:border-slate-700">
         <div class="flex items-start justify-between">
-            <div class="flex flex-col">
+            <div class="flex flex-col min-w-0">
                 <span class="text-slate-500 dark:text-slate-400 text-sm font-semibold mb-1">Total Orders</span>
-                <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-100">{totalOrders}</h3>
+                <h3 class="text-xl xl:text-2xl font-bold text-slate-800 dark:text-slate-100 truncate">{totalOrders}</h3>
             </div>
-            <div class="size-10 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center border border-emerald-100 dark:border-emerald-800/50">
+            <div class="size-10 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center border border-emerald-100 dark:border-emerald-800/50 flex-shrink-0 ml-2">
                  <ShoppingCart class="size-5" />
             </div>
         </div>
@@ -83,11 +83,11 @@
      <!-- Products -->
      <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-md border border-slate-100 dark:border-slate-700">
         <div class="flex items-start justify-between">
-            <div class="flex flex-col">
+            <div class="flex flex-col min-w-0">
                 <span class="text-slate-500 dark:text-slate-400 text-sm font-semibold mb-1">Active Products</span>
-                <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-100">{activeProducts}</h3>
+                <h3 class="text-xl xl:text-2xl font-bold text-slate-800 dark:text-slate-100 truncate">{activeProducts}</h3>
             </div>
-            <div class="size-10 rounded-lg bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 flex items-center justify-center border border-amber-100 dark:border-amber-800/50">
+            <div class="size-10 rounded-lg bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 flex items-center justify-center border border-amber-100 dark:border-amber-800/50 flex-shrink-0 ml-2">
                  <Package class="size-5" />
             </div>
         </div>
@@ -101,11 +101,11 @@
      <!-- Customers -->
      <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-md border border-slate-100 dark:border-slate-700">
         <div class="flex items-start justify-between">
-            <div class="flex flex-col">
+            <div class="flex flex-col min-w-0">
                 <span class="text-slate-500 dark:text-slate-400 text-sm font-semibold mb-1">Total Customers</span>
-                <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-100">{totalCustomers}</h3>
+                <h3 class="text-xl xl:text-2xl font-bold text-slate-800 dark:text-slate-100 truncate">{totalCustomers}</h3>
             </div>
-            <div class="size-10 rounded-lg bg-teal-50 dark:bg-teal-900/20 text-teal-600 dark:text-teal-400 flex items-center justify-center border border-teal-100 dark:border-teal-800/50">
+            <div class="size-10 rounded-lg bg-teal-50 dark:bg-teal-900/20 text-teal-600 dark:text-teal-400 flex items-center justify-center border border-teal-100 dark:border-teal-800/50 flex-shrink-0 ml-2">
                  <Users class="size-5" />
             </div>
         </div>
@@ -119,10 +119,10 @@
   </div>
 
   <!-- Analytics & Content Grid -->
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
       
       <!-- Left Column: Sales & Recent Orders -->
-      <div class="lg:col-span-2 space-y-6">
+      <div class="xl:col-span-2 space-y-6">
           <!-- Sales Chart -->
           <SalesChart />
 

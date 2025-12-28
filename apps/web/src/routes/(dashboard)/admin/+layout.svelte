@@ -38,7 +38,7 @@
      </div>
 
      <!-- Navigation -->
-     <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+     <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
         <div class="text-xs font-bold text-slate-400 uppercase px-3 mb-2 tracking-wider">Main Menu</div>
         {#each navigation as item}
            {@const isActive = $page.url.pathname === item.href}
@@ -108,7 +108,7 @@
   {/if}
 
   <!-- Added pt-20 to account for fixed TopBar height + spacing -->
-  <main class="flex-1 lg:pl-64 flex flex-col min-h-screen pt-8 transition-all duration-300">
+  <main class="flex-1 lg:pl-64 flex flex-col min-h-screen pt-16 lg:pt-10 transition-all duration-300">
      <div class="p-6 lg:p-10 max-w-full mx-auto w-full">
         {@render children()}
      </div>
