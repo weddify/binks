@@ -32,32 +32,32 @@
         </div>
       </div>
       <div class="col-span-1">
-        <h4 class="font-bold text-slate-900 dark:text-white mb-4">Layanan</h4>
+        <h4 class="font-bold text-slate-900 dark:text-white mb-4">Services</h4>
         <ul class="flex flex-col gap-2 text-sm text-slate-500">
-          <li><a class="hover:text-primary transition-colors" href="#products">Semua Produk</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#products">All Products</a></li>
           <li><a class="hover:text-primary transition-colors" href="#products">Streaming</a></li>
           <li><a class="hover:text-primary transition-colors" href="#products">Games</a></li>
           <li><a class="hover:text-primary transition-colors" href="#products">Software</a></li>
         </ul>
       </div>
       <div class="col-span-1">
-        <h4 class="font-bold text-slate-900 dark:text-white mb-4">Dukungan</h4>
+        <h4 class="font-bold text-slate-900 dark:text-white mb-4">Support</h4>
         <ul class="flex flex-col gap-2 text-sm text-slate-500">
-          <li><a class="hover:text-primary transition-colors" href="/contact">Hubungi Kami</a></li>
-          <li><a class="hover:text-primary transition-colors" href="/terms-of-service">Cara Order</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/contact">Contact Us</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/terms-of-service">How to Order</a></li>
           <li><a class="hover:text-primary transition-colors" href="/disclaimer">Disclaimer</a></li>
-          <li><a class="hover:text-primary transition-colors" href="/warranty-policy">Kebijakan Garansi</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/warranty-policy">Warranty Policy</a></li>
         </ul>
       </div>
       <div class="col-span-1">
         <h4 class="font-bold text-slate-900 dark:text-white mb-4">Legal</h4>
          <ul class="flex flex-col gap-2 text-sm text-slate-500">
-           <li><a class="hover:text-primary transition-colors" href="/terms-of-service">Syarat & Ketentuan</a></li>
-           <li><a class="hover:text-primary transition-colors" href="/privacy-policy">Kebijakan Privasi</a></li>
+           <li><a class="hover:text-primary transition-colors" href="/terms-of-service">Terms & Conditions</a></li>
+           <li><a class="hover:text-primary transition-colors" href="/privacy-policy">Privacy Policy</a></li>
         </ul>
       </div>
       <div class="col-span-1">
-        <h4 class="font-bold text-slate-900 dark:text-white mb-4">Metode Pembayaran</h4>
+        <h4 class="font-bold text-slate-900 dark:text-white mb-4">Payment Methods</h4>
         <div class="flex flex-wrap gap-2">
           <div class="h-8 w-12 bg-slate-100 rounded flex items-center justify-center text-xs font-bold text-slate-500 border border-slate-200">BCA</div>
           <div class="h-8 w-12 bg-slate-100 rounded flex items-center justify-center text-xs font-bold text-slate-500 border border-slate-200">BRI</div>

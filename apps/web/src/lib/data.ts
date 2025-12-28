@@ -70,7 +70,7 @@ export const database: Record<string, CategoryData> = {
       "Instant delivery on the world's most popular streaming services.",
     groups: [
       {
-        groupTitle: "Netflix Premium 1 Bulan",
+        groupTitle: "Netflix Premium 1 Month",
         products: [
           {
             id: "n1-1",
@@ -121,7 +121,7 @@ export const database: Record<string, CategoryData> = {
         ],
       },
       {
-        groupTitle: "HBO Premium 1 Bulan",
+        groupTitle: "HBO Premium 1 Month",
         products: [
           {
             id: "h1-4",
@@ -296,6 +296,8 @@ export const userOrders = [
     },
   },
 ];
+
+export type Order = (typeof userOrders)[number];
 
 export type Coupon = {
   id: string;

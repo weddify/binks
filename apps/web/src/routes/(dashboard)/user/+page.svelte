@@ -99,7 +99,7 @@
 
   <main class="flex-grow container mx-auto px-4 py-8">
      
-     <div class="flex flex-col md:flex-row gap-6 max-w-screen-lp mx-auto">
+     <div class="flex flex-col lg:flex-row gap-6 max-w-7xl mx-auto">
         
          <!-- Sidebar (Desktop) -->
          <div class="hidden md:block w-64 flex-shrink-0 space-y-4">
@@ -383,7 +383,7 @@
                                     <span class="text-[10px] text-slate-400 font-bold uppercase">Invite Link</span>
                                     <code class="text-sm font-mono font-bold text-blue-600 dark:text-blue-400 truncate max-w-[200px]">https://spotify.com/invite/xyz...</code>
                                  </div>
-                                 <a href="#" class="p-1.5 hover:bg-white dark:hover:bg-slate-800 rounded transition-colors text-slate-400 hover:text-primary">
+                                 <a href="/" class="p-1.5 hover:bg-white dark:hover:bg-slate-800 rounded transition-colors text-slate-400 hover:text-primary">
                                     <ExternalLink class="size-4" />
                                  </a>
                               </div>

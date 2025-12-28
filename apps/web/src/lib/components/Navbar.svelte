@@ -35,7 +35,7 @@
       <!-- Actions -->
       <div class="flex items-center gap-3 sm:gap-4">
         <ThemeToggle />
-        <a class="hidden sm:block text-sm font-medium hover:text-primary transition-colors" href="/?my-orders">My Orders</a>
+        <a class="hidden sm:block text-sm font-medium hover:text-primary transition-colors" href="/user">My Orders</a>
         <div class="flex gap-2">
           <a href="/cart" class="flex items-center justify-center size-10 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors relative">
             <ShoppingCart class="size-5" />
@@ -77,7 +77,7 @@
               <Bolt class="size-5" />
               Home
           </a>
-          <a href="/?my-orders" class="flex items-center gap-3 px-4 py-3 rounded-lg text-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" onclick={toggleMobileMenu}>
+          <a href="/user" class="flex items-center gap-3 px-4 py-3 rounded-lg text-lg font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" onclick={toggleMobileMenu}>
               <ShoppingBag class="size-5" />
               My Orders
           </a>

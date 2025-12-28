@@ -12,8 +12,8 @@
   const heroSlides = [
     {
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA9r63uH0kQSTF6CdO8YRXiy3sdlb8gPRpj8cqwRr8--FbYAUI6CsmXzOoLKMfXX21DPFdclKWjKsM-B57X1Bzp3tv19Xc3hOV5zsQ4zCigo68kjHOAhH3-LKyWLrD8OmOOYIhk2xZRcevO5uHj9I1gEgkiuH69QJ8Z6lRJHuzEhRCktB0TK26UBoMDQ-lynRSTfiWYpNQ8USbFcwoIpzyQX4DYpWqrDHCAAffxlO7BYs5vTWg3R1ikWkw5Vs4gdfpgI_ItlpqPWB3z",
-        title: 'Beli Akun Premium <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Instan</span>',
-        description: "Akses ribuan aplikasi premium tanpa ribet. Pengiriman otomatis 24/7 langsung ke email kamu dalam hitungan detik.",
+        title: 'Buy Premium Accounts <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Instantly</span>',
+        description: "Access thousands of premium apps hassle-free. Automatic 24/7 delivery directly to your email in seconds.",
         badge: {
             text: "Instant Delivery",
             style: "bg-blue-500/20 border-blue-500/30",
@@ -23,10 +23,10 @@
     },
     {
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDhDJdyMBdka8n56wwXe1feEkpcfOQU5dgl0uKfzNcM-wmeRG1ewU3e6WYYEat12PldnWCyjeeZOD_JXNUAEb2zj57r7fmhnKMGLs-hp1Ne-_tEH9FJP3A2wi_H0xKSAC3P9j1IlrF3RPShD3wzKNqIeLWSMc-y0b1N38JOBBK4HEiD6Q14ipl3vYEiJegDmiS6H3xwXFll45IA2nTNGfg7jIwsBykvGKRa6AOp_-CR_chxSpxX3zl6NFfVUBDEwbF-eJ2EU5i-HEge",
-        title: 'Top Up Game <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">Termurah</span>',
-        description: "Valorant, Mobile Legends, Steam Wallet dan lainnya. Harga miring proses kilat, dijamin aman 100%.",
+        title: 'Cheapest Game <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">Top Up</span>',
+        description: "Valorant, Mobile Legends, Steam Wallet and more. Low prices, lightning fast process, 100% safe guarantee.",
         badge: {
-            text: "Game Populer",
+            text: "Popular Games",
             style: "bg-red-500/20 border-red-500/30",
             dotColor: "bg-red-400",
             textColor: "text-red-300"
@@ -95,11 +95,11 @@
                     
                     <div class="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-8 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200" class:invisible={currentSlide !== i}>
                         <a href="#products" class="h-10 md:h-12 px-6 md:px-8 rounded-lg bg-primary hover:bg-blue-600 text-white text-sm md:text-base font-bold transition-all shadow-lg shadow-blue-500/30 flex items-center gap-2 transform hover:-translate-y-0.5 no-underline justify-center">
-                            Lihat Produk
+                            View Products
                             <ArrowRight class="size-4 md:size-5" />
                         </a>
                         <a href="#features" class="h-10 md:h-12 px-6 md:px-8 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white text-sm md:text-base font-semibold transition-all flex items-center justify-center no-underline">
-                            Cara Kerja
+                            How It Works
                         </a>
                     </div>
 
@@ -107,11 +107,11 @@
                     <div class="hidden md:flex items-center gap-6 mt-8 pt-6 border-t border-white/10 w-full max-w-lg animate-in fade-in duration-1000 delay-300" class:invisible={currentSlide !== i}>
                         <div class="flex items-center gap-2">
                            <ShieldCheck class="text-emerald-400 size-5" />
-                           <span class="text-sm font-medium text-slate-300">Garansi Penuh</span>
+                           <span class="text-sm font-medium text-slate-300">Full Warranty</span>
                         </div>
                         <div class="flex items-center gap-2">
                            <Bolt class="text-yellow-400 size-5" />
-                           <span class="text-sm font-medium text-slate-300">Proses 1 Detik</span>
+                           <span class="text-sm font-medium text-slate-300">1 Second Process</span>
                         </div>
                      </div>
                 </div>
@@ -138,8 +138,8 @@
                   <Bolt class="size-8" />
                </div>
                <div>
-                  <h3 class="font-bold text-lg mb-1">Pengiriman Kilat</h3>
-                  <p class="text-sm text-slate-500 dark:text-slate-400">Sistem otomatis mengirim pesanan kamu hanya dalam 1 detik setelah pembayaran.</p>
+                  <h3 class="font-bold text-lg mb-1">Instant Delivery</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">Automatic system sends your order in just 1 second after payment.</p>
                </div>
            </div>
            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col gap-4 hover:shadow-md transition-shadow">
@@ -147,8 +147,8 @@
                  <ShieldCheck class="size-8" />
               </div>
               <div>
-                 <h3 class="font-bold text-lg mb-1">Transaksi Aman</h3>
-                 <p class="text-sm text-slate-500 dark:text-slate-400">Setiap transaksi dilindungi enkripsi SSL dan garansi uang kembali jika gagal.</p>
+                 <h3 class="font-bold text-lg mb-1">Secure Transaction</h3>
+                 <p class="text-sm text-slate-500 dark:text-slate-400">Every transaction is protected by SSL encryption and money-back guarantee if failed.</p>
               </div>
           </div>
           <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col gap-4 hover:shadow-md transition-shadow">
@@ -166,8 +166,8 @@
       <!-- Categories -->
       <section id="products">
         <div class="flex items-center justify-between mb-6">
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Kategori Populer</h2>
-          <a class="text-primary font-medium text-sm hover:underline" href="/">Lihat Semua</a>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Popular Categories</h2>
+          <a class="text-primary font-medium text-sm hover:underline" href="/">View All</a>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
            {#each categories as cat}
@@ -179,7 +179,7 @@
                    <div class="flex items-center gap-2 mb-1">
                       <Icon class="text-white size-4" />
                        {#if cat.title === 'Streaming'}
-                         <span class="text-xs font-bold text-green-400 uppercase tracking-wider">Populer</span>
+                         <span class="text-xs font-bold text-green-400 uppercase tracking-wider">Popular</span>
                        {/if}
                    </div>
                    <h3 class="text-white text-lg font-bold">{cat.title}</h3>
@@ -221,7 +221,7 @@
                <div class="text-yellow-400 flex mb-4 gap-1">
                   {#each Array(5) as _} <Star class="size-4 fill-current" /> {/each}
                </div>
-               <p class="text-sm text-slate-600 dark:text-slate-300 mb-6 italic">"Gila sih ini, baru bayar langsung masuk email akunnya. Gapake nunggu admin bales chat. Recommended parah!"</p>
+               <p class="text-sm text-slate-600 dark:text-slate-300 mb-6 italic">"This is crazy, accounts sent to email instantly after payment. No need to wait for admin reply. Highly recommended!"</p>
                <div class="flex items-center gap-3">
                   <div class="size-10 rounded-full bg-gray-200 overflow-hidden">
                      <img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWMEpiHGEv5zhY7ork8779hOU_cC7UtKoWZj-hjqV7jxrkuGELb-o6UIhdX34eKPeJ65xxDzynBHGWHWCqlJfK_0eQ-VwGZN63ynVi4pOq8JfGdieF10TLT7exLzjSOdLqV9AKwWupj_SB_xqLZY7BWjC86TpIxkoKDVrvcXVX_LJD9nTEve1SUtSxNfmJxF5SE-Lqa4JSvBd2523jBAY_Zqe4AWkFsF4RIrKdQyH28C83pSHA5iCvV5Z_IpATtFbjffTEEH4DZa_j"/>
@@ -237,7 +237,7 @@
                <div class="text-yellow-400 flex mb-4 gap-1">
                   {#each Array(5) as _} <Star class="size-4 fill-current" /> {/each}
                </div>
-               <p class="text-sm text-slate-600 dark:text-slate-300 mb-6 italic">"Harga termurah dibanding toko sebelah, tapi kualitasnya premium. CS nya juga fast respon pas aku bingung cara redeemnya."</p>
+               <p class="text-sm text-slate-600 dark:text-slate-300 mb-6 italic">"Cheapest price compared to other shops, but premium quality. CS is also fast response when I was confused how to redeem."</p>
                <div class="flex items-center gap-3">
                   <div class="size-10 rounded-full bg-gray-200 overflow-hidden">
                      <img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkh-tE-ET4M6zuq2ntmH4ZgsGp1amf0Vbq6535wGo-g-ZW3NzeDJqfb9r2vQYM2ZSJKOQMhKc3o42SCji8T8Zc0wYSyxGiQl6WMcD-MWnbHjlIW6qanRV8Zw2_-den5SA7vnhEUkrjIe3qTm2y3PdsflhcRMYoREPdcoZ1nSH1nmlcfSnD3zQXHVDTDTm_tUzYGHUjmM8YSpqLbSs8TzQDvQPu-q4kziufvTJPMbrYsp-BGMcN87wDu5eUFl1HdVerhoLnveH26T9s"/>
@@ -254,7 +254,7 @@
                   {#each Array(4) as _} <Star class="size-4 fill-current" /> {/each}
                   <Star class="size-4 fill-current text-yellow-400/50" />
                </div>
-               <p class="text-sm text-slate-600 dark:text-slate-300 mb-6 italic">"Udah langganan Netflix disini 3 bulan. Aman aman aja, anti hold. Lumayan hemat budget streaming."</p>
+               <p class="text-sm text-slate-600 dark:text-slate-300 mb-6 italic">"Subscribed Netflix here for 3 months. Safe and secure, anti-hold. Helps save streaming budget."</p>
                <div class="flex items-center gap-3">
                   <div class="size-10 rounded-full bg-gray-200 overflow-hidden">
                      <img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUkycVj8uJpqeKtttmiaBT8yE6DpwV6AVEcOf4XELgc-FPnFrDbfT3R8-1ldu7HPoo2JX1-guRxIDZ_6Z17TK6N0WdvEwAnBS64XgWyxlBZ710-EhdafRs_epDLCdnCGmT2Jg3lOIZ_tPI8G_NVW2E0mPrRv2OJIuYSSLS9MY8VFrPrWWphpaCSrycQLKF_QOYlRxGhNmR4LD9LRZjF0aXbDxqpo_WW88mul7_msK4wDl2fD6mHneE2ontcg24m2azf2JBqO6s37Qo"/>
