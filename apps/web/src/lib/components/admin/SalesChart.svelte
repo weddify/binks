@@ -24,102 +24,106 @@
     // Only run on client-side
     if (typeof window !== 'undefined' && chartElement) {
         (async () => {
-            const module = await import('apexcharts');
-            const ApexCharts = module.default;
+            try {
+                const module = await import('apexcharts');
+                const ApexCharts = module.default;
 
-            // Destroy existing chart if it exists to prevent duplicates on re-render
-            if (chart) {
-                chart.destroy();
-            }
-
-            const options = {
-                series: [{
-                    name: 'Revenue',
-                    data: data
-                }],
-                chart: {
-                    type: type,
-                    height: height,
-                    fontFamily: 'Inter, sans-serif',
-                    toolbar: {
-                        show: false
-                    },
-                    zoom: {
-                        enabled: false
-                    }
-                },
-                dataLabels: {
-                    enabled: false
-                },
-                stroke: {
-                    curve: 'smooth',
-                    width: 3
-                },
-                xaxis: {
-                    categories: categories,
-                    axisBorder: {
-                        show: false
-                    },
-                    axisTicks: {
-                        show: false
-                    },
-                    labels: {
-                        style: {
-                            colors: '#64748b',
-                            fontSize: '12px'
-                        }
-                    }
-                },
-                yaxis: {
-                    labels: {
-                        style: {
-                            colors: '#64748b',
-                            fontSize: '12px'
-                        },
-                        formatter: (value: number) => {
-                            return new Intl.NumberFormat('id-ID', { notation: "compact", compactDisplay: "short" }).format(value);
-                        }
-                    }
-                },
-                grid: {
-                    borderColor: '#e2e8f0', // slate-200
-                    strokeDashArray: 4,
-                    yaxis: {
-                        lines: {
-                            show: true
-                        }
-                    }
-                },
-                fill: {
-                    type: 'gradient',
-                    gradient: {
-                        shadeIntensity: 1,
-                        opacityFrom: 0.4,
-                        opacityTo: 0.05,
-                        stops: [0, 90, 100]
-                    }
-                },
-                colors: [color],
-                tooltip: {
-                    theme: 'light', 
-                    y: {
-                        formatter: function (val: number) {
-                             return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(val);
-                        }
-                    }
+                // Destroy existing chart if it exists to prevent duplicates on re-render
+                if (chart) {
+                    chart.destroy();
                 }
-            };
 
-            // Dark mode adaptation (basic)
-            if (document.documentElement.classList.contains('dark')) {
-                options.grid.borderColor = '#334155'; // slate-700
-                options.xaxis.labels.style.colors = '#94a3b8'; // slate-400
-                options.yaxis.labels.style.colors = '#94a3b8'; // slate-400
-                options.tooltip.theme = 'dark';
+                const options = {
+                    series: [{
+                        name: 'Revenue',
+                        data: data
+                    }],
+                    chart: {
+                        type: type,
+                        height: height,
+                        fontFamily: 'Inter, sans-serif',
+                        toolbar: {
+                            show: false
+                        },
+                        zoom: {
+                            enabled: false
+                        }
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    stroke: {
+                        curve: 'smooth',
+                        width: 3
+                    },
+                    xaxis: {
+                        categories: categories,
+                        axisBorder: {
+                            show: false
+                        },
+                        axisTicks: {
+                            show: false
+                        },
+                        labels: {
+                            style: {
+                                colors: '#64748b',
+                                fontSize: '12px'
+                            }
+                        }
+                    },
+                    yaxis: {
+                        labels: {
+                            style: {
+                                colors: '#64748b',
+                                fontSize: '12px'
+                            },
+                            formatter: (value: number) => {
+                                return new Intl.NumberFormat('id-ID', { notation: "compact", compactDisplay: "short" }).format(value);
+                            }
+                        }
+                    },
+                    grid: {
+                        borderColor: '#e2e8f0', // slate-200
+                        strokeDashArray: 4,
+                        yaxis: {
+                            lines: {
+                                show: true
+                            }
+                        }
+                    },
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                            shadeIntensity: 1,
+                            opacityFrom: 0.4,
+                            opacityTo: 0.05,
+                            stops: [0, 90, 100]
+                        }
+                    },
+                    colors: [color],
+                    tooltip: {
+                        theme: 'light', 
+                        y: {
+                            formatter: function (val: number) {
+                                 return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(val);
+                            }
+                        }
+                    }
+                };
+
+                // Dark mode adaptation (basic)
+                if (document.documentElement.classList.contains('dark')) {
+                    options.grid.borderColor = '#334155'; // slate-700
+                    options.xaxis.labels.style.colors = '#94a3b8'; // slate-400
+                    options.yaxis.labels.style.colors = '#94a3b8'; // slate-400
+                    options.tooltip.theme = 'dark';
+                }
+
+                chart = new ApexCharts(chartElement, options);
+                chart.render();
+            } catch (e) {
+                console.error("Failed to load chart", e);
             }
-
-            chart = new ApexCharts(chartElement, options);
-            chart.render();
         })();
 
         return () => {
