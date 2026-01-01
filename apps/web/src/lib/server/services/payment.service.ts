@@ -5,9 +5,11 @@ import { Errors, type ServiceResult, ok, fail } from "./utils";
 import { OrderService } from "./order.service";
 
 // Get environment variables
-const PAKASIR_PROJECT_SLUG = process.env.PAKASIR_PROJECT_SLUG || "";
-const PAKASIR_API_KEY = process.env.PAKASIR_API_KEY || "";
-const PAKASIR_SANDBOX_MODE = process.env.PAKASIR_SANDBOX_MODE || "true";
+import { env } from "$env/dynamic/private";
+
+const PAKASIR_PROJECT_SLUG = env.PAKASIR_PROJECT_SLUG || "";
+const PAKASIR_API_KEY = env.PAKASIR_API_KEY || "";
+const PAKASIR_SANDBOX_MODE = env.PAKASIR_SANDBOX_MODE || "true";
 
 // Pakasir API base URL
 const PAKASIR_API_URL = "https://pakasir.com/api";

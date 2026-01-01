@@ -15,10 +15,9 @@ import { CouponService } from "./coupon.service";
 import { ProductService } from "./product.service";
 
 // Get order expiry from env or default to 60 minutes
-const ORDER_EXPIRY_MINUTES = parseInt(
-  process.env.ORDER_EXPIRY_MINUTES || "60",
-  10
-);
+import { env } from "$env/dynamic/private";
+
+const ORDER_EXPIRY_MINUTES = parseInt(env.ORDER_EXPIRY_MINUTES || "60", 10);
 
 // Order ID generator: INV-YYYYMMDD-XXXXX
 function generateOrderId(): string {
