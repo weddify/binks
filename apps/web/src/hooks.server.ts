@@ -4,6 +4,7 @@ import { building } from "$app/environment";
 import type { Handle } from "@sveltejs/kit";
 
 export const handle: Handle = async ({ event, resolve }) => {
+  /* TEMPORARILY DISABLED TO FIX CLOUDFLARE DEPLOYMENT
   // Fetch current session from Better Auth
   const session = await auth.api.getSession({
     headers: event.request.headers,
@@ -24,4 +25,6 @@ export const handle: Handle = async ({ event, resolve }) => {
 
   // Let better-auth handle auth routes
   return svelteKitHandler({ event, resolve, auth, building });
+  */
+  return resolve(event);
 };
