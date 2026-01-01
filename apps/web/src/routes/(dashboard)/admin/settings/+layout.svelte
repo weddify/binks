@@ -29,7 +29,7 @@
   <!-- Header -->
   <Header 
       title="Settings" 
-      description="Configure your store preferences and integrations."
+      subtitle="Configure your store preferences and integrations."
   />
 
   <!-- Tabs -->
