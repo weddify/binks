@@ -3,13 +3,12 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { admin } from "better-auth/plugins";
 import { db } from "../db";
 import * as schema from "../db/schema";
-
-// Get environment variables
-const BETTER_AUTH_SECRET =
-  process.env.BETTER_AUTH_SECRET || "default-secret-change-me";
-const BETTER_AUTH_URL = process.env.BETTER_AUTH_URL || "http://localhost:5173";
-const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || "";
-const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || "";
+import {
+  BETTER_AUTH_SECRET,
+  BETTER_AUTH_URL,
+  GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET,
+} from "$env/static/private";
 
 export const auth = betterAuth({
   // Database configuration with Drizzle
