@@ -4,6 +4,7 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import BuyNowModal from '$lib/components/BuyNowModal.svelte';
+  import Seo from '$lib/components/Seo.svelte';
   import { Home, ChevronRight, Package, TrendingUp, Info, ShieldCheck, FileText, ShoppingCart, ArrowLeft, Heart, Facebook, Twitter, Linkedin, Instagram } from 'lucide-svelte';
 
   $: slug = $page.params.slug as string;
@@ -24,6 +25,13 @@
      if (product && product.stock > 0) isModalOpen = true;
   }
 </script>
+
+<Seo 
+  title={product ? product.title : 'Product Not Found'}
+  description={product ? product.description : 'The product you are looking for might have been removed.'}
+  image={product?.image}
+  type="product"
+/>
 
 <div class="flex flex-col min-h-screen bg-background-light dark:bg-background-dark font-sans">
   <Navbar />

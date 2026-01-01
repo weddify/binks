@@ -2,7 +2,7 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import { userOrders } from '$lib/data';
-  import { User, Package, Settings, LogOut, ChevronRight, Clock, CheckCircle2, XCircle, Search, Library, LifeBuoy, Copy, ChevronDown, ChevronUp, ExternalLink, Download, List } from 'lucide-svelte';
+  import { User, Package, Settings, LogOut, ChevronRight, Clock, CircleCheck, CircleX, Search, Library, LifeBuoy, Copy, ChevronDown, ChevronUp, ExternalLink, Download, List } from 'lucide-svelte';
   import { slide } from 'svelte/transition';
 
   let activeTab = 'orders';
@@ -44,9 +44,9 @@
 
   function getStatusIcon(status: string) {
      switch(status) {
-        case 'PAID': return CheckCircle2;
+        case 'PAID': return CircleCheck;
         case 'PENDING': return Clock;
-        default: return XCircle;
+        default: return CircleX;
      }
   }
 
@@ -84,13 +84,13 @@
   <!-- Toast Notification -->
   {#if showToast}
     <div in:slide={{ duration: 300, axis: 'y' }} class="fixed top-24 right-4 z-50 bg-white dark:bg-slate-800 border-l-4 border-emerald-500 shadow-xl rounded-lg p-4 flex items-start gap-3 max-w-sm">
-      <CheckCircle2 class="size-5 text-emerald-500 mt-0.5" />
+      <CircleCheck class="size-5 text-emerald-500 mt-0.5" />
       <div>
          <h4 class="font-bold text-slate-900 dark:text-white text-sm">Settings Saved</h4>
          <p class="text-xs text-slate-500 mt-1">Your profile information has been updated successfully.</p>
       </div>
       <button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200" onclick={() => showToast = false}>
-         <XCircle class="size-4" />
+         <CircleX class="size-4" />
       </button>
     </div>
   {/if}
@@ -527,7 +527,7 @@
                  <!-- Notification Preferences -->
                  <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm">
                     <h2 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                       <CheckCircle2 class="size-5 text-primary" /> Notification Preferences
+                       <CircleCheck class="size-5 text-primary" /> Notification Preferences
                     </h2>
                     <div class="space-y-3">
                        <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-100 dark:border-slate-700/50 hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors cursor-pointer group">

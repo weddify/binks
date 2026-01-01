@@ -3,10 +3,10 @@
   import { goto } from '$app/navigation';
   import Navbar from '$lib/components/Navbar.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import { Copy, Clock, Download, CheckCircle2, ChevronDown, ChevronUp, Package, Receipt, Smartphone, AlertTriangle, Info, ArrowRight, XCircle } from 'lucide-svelte';
+  import { Copy, Clock, Download, CircleCheck, ChevronDown, ChevronUp, Package, Receipt, Smartphone, AlertTriangle, Info, ArrowRight, CircleX } from 'lucide-svelte';
   import { slide, fade, scale } from 'svelte/transition';
   import { onDestroy } from 'svelte';
-  import { PAYMENT_INSTRUCTIONS, type PaymentInstruction } from '$lib/paymentInstructions';
+  import { PAYMENT_INSTRUCTIONS, type PaymentInstruction } from '$lib/utils/paymentInstructions';
   import { toast } from 'svelte-sonner';
   import ConfirmModal from '$lib/components/ConfirmModal.svelte';
 
@@ -155,11 +155,11 @@
                   <h1 class="font-bold text-xl text-slate-900 dark:text-white">Payment for #{orderId}</h1>
                   {#if invoice.status === 'PAID'}
                      <p class="text-sm text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
-                        <CheckCircle2 class="size-4" /> Received & Verified
+                        <CircleCheck class="size-4" /> Received & Verified
                      </p>
                    {:else if invoice.status === 'CANCELLED'}
                       <p class="text-sm text-red-600 dark:text-red-400 font-bold flex items-center gap-1">
-                         <XCircle class="size-4" /> Transaction Cancelled
+                         <CircleX class="size-4" /> Transaction Cancelled
                       </p>
                    {:else}
                      <p class="text-sm text-slate-500">Complete your payment within <span class="text-xs font-mono font-bold bg-slate-100 dark:bg-slate-700 px-1.5 py-0.5 rounded text-slate-700 dark:text-slate-300">{invoice.expiry}</span></p>
@@ -259,11 +259,11 @@
                 </div>
                  {#if invoice.status === 'PAID'}
                      <p class="text-xs text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
-                        <CheckCircle2 class="size-3" /> Received & Verified
+                        <CircleCheck class="size-3" /> Received & Verified
                      </p>
                  {:else if invoice.status === 'CANCELLED'}
                       <p class="text-xs text-red-600 dark:text-red-400 font-bold flex items-center gap-1">
-                         <XCircle class="size-3" /> Transaction Cancelled
+                         <CircleX class="size-3" /> Transaction Cancelled
                       </p>
                  {:else}
                      <p class="text-xs text-slate-500">Pay within <span class="font-mono font-bold bg-slate-200 dark:bg-slate-700 px-1 py-0.5 rounded text-slate-700 dark:text-slate-300">{invoice.expiry}</span></p>
@@ -273,7 +273,7 @@
              <!-- Corner Status Badge -->
              {#if invoice.status === 'PAID'}
                <div class="hidden md:flex absolute top-4 right-4 px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-wider border border-emerald-200 dark:border-emerald-800 items-center gap-1">
-                   <CheckCircle2 class="size-3" /> Paid
+                   <CircleCheck class="size-3" /> Paid
                </div>
              {:else if invoice.status === 'CANCELLED'}
                <div class="hidden md:flex absolute top-4 right-4 px-2 py-0.5 rounded bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 text-[10px] font-bold uppercase tracking-wider border border-red-200 dark:border-red-800 items-center gap-1">
@@ -289,7 +289,7 @@
                   <!-- SUCCESS VIEW -->
                   <div in:scale class="flex flex-col items-center justify-center py-8">
                      <div class="size-20 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mb-6 ring-8 ring-emerald-50 dark:ring-emerald-900/10">
-                        <CheckCircle2 class="size-10 text-emerald-600 dark:text-emerald-400" />
+                        <CircleCheck class="size-10 text-emerald-600 dark:text-emerald-400" />
                      </div>
                      
                      <h2 class="text-xl font-black text-slate-900 dark:text-white mb-2">Payment Successful!</h2>
@@ -315,7 +315,7 @@
                   <!-- CANCELLED VIEW -->
                   <div in:scale class="flex flex-col items-center justify-center py-8">
                      <div class="size-20 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-6 ring-8 ring-red-50 dark:ring-red-900/10">
-                        <XCircle class="size-10 text-red-600 dark:text-red-400" />
+                        <CircleX class="size-10 text-red-600 dark:text-red-400" />
                      </div>
                      
                      <h2 class="text-xl font-black text-slate-900 dark:text-white mb-2">Transaction Cancelled</h2>
@@ -366,7 +366,7 @@
                         class="w-full py-2.5 rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-all shadow-md shadow-blue-500/10 flex items-center justify-center gap-2"
                         onclick={markAsPaid}
                      >
-                        <CheckCircle2 class="size-4" /> I Have Paid
+                        <CircleCheck class="size-4" /> I Have Paid
                      </button>
                      {#if invoice.paymentMethod === 'VA'}
                         <button class="w-full py-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold hover:bg-slate-50 flex items-center justify-center gap-2" onclick={() => copyToClipboard(invoice.vaNumber)}>
@@ -394,7 +394,7 @@
       <!-- Safe Footer Area -->
       <div class="hidden md:block fixed bottom-4 left-0 right-0 text-center pointer-events-none">
           <p class="text-[10px] text-slate-400">
-             Secured by Binks Payment Systems
+             Secured by SwiftAcc Payment Systems
           </p>
       </div>
 

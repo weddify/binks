@@ -1,14 +1,17 @@
+```
 <script lang="ts">
   import { page } from '$app/stores';
   import Button from '$lib/components/Button.svelte';
   import { products } from '$lib/data';
-  import { ChevronLeft, Plus, X, Upload, CheckCircle2, Copy, Trash2, Save, AlertCircle, Calendar, Image as ImageIcon } from 'lucide-svelte';
+  import { ChevronLeft, Plus, X, Upload, CircleCheck, Copy, Trash2, Save, CircleAlert, Calendar, Image as ImageIcon } from 'lucide-svelte';
   import { slide } from 'svelte/transition';
   import FormInput from '$lib/components/form/FormInput.svelte';
   import FormTextarea from '$lib/components/form/FormTextarea.svelte';
   import FormSelect from '$lib/components/form/FormSelect.svelte';
   import FormCheckbox from '$lib/components/form/FormCheckbox.svelte';
+
   import FormImageUpload from '$lib/components/form/FormImageUpload.svelte';
+  import Editor from '$lib/components/admin/Editor.svelte';
 
   const routeSlug = $page.params.slug;
   const product = products.find(p => p.slug === routeSlug);
@@ -161,7 +164,10 @@
 
               <!-- Description -->
               <div class="pt-2 border-t border-slate-50 dark:border-slate-800/50">
-                 <FormTextarea id="description" label="Description" bind:value={description} />
+                   <div class="space-y-1.5 min-h-[300px]">
+                      <label for="description" class="text-xs font-bold text-slate-500 uppercase">Description</label>
+                      <Editor content={description} onchange={(html) => description = html} />
+                   </div>
               </div>
            </div>
 
@@ -183,11 +189,20 @@
 
               <div class="pt-2">
                  {#if activeInfoTab === 'instructions'}
-                    <FormTextarea id="instructions" label="Redemption Instructions" bind:value={instructionsText} rows={6} placeholder="Step 1..." />
+                    <div class="space-y-1.5 min-h-[300px]">
+                       <label for="instructions" class="text-xs font-bold text-slate-500 uppercase">Redemption Instructions</label>
+                       <Editor content={instructionsText} onchange={(html) => instructionsText = html} />
+                    </div>
                  {:else if activeInfoTab === 'warranty'}
-                    <FormTextarea id="warranty" label="Warranty Policy" bind:value={warrantyPolicy} rows={6} />
+                    <div class="space-y-1.5 min-h-[300px]">
+                       <label for="warranty" class="text-xs font-bold text-slate-500 uppercase">Warranty Policy</label>
+                       <Editor content={warrantyPolicy} onchange={(html) => warrantyPolicy = html} />
+                    </div>
                  {:else if activeInfoTab === 'notes'}
-                    <FormTextarea id="notes" label="Additional Notes" bind:value={notes} rows={6} />
+                    <div class="space-y-1.5 min-h-[300px]">
+                       <label for="notes" class="text-xs font-bold text-slate-500 uppercase">Additional Notes</label>
+                       <Editor content={notes} onchange={(html) => notes = html} />
+                    </div>
                  {/if}
               </div>
            </div>
@@ -305,7 +320,7 @@
          <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
             <div class="p-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/50 flex items-center justify-between">
                <h3 class="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-                  <CheckCircle2 class="size-4 text-emerald-500" /> Available Stock ({availableAccounts.length})
+                  <CircleCheck class="size-4 text-emerald-500" /> Available Stock ({availableAccounts.length})
                </h3>
             </div>
             <div>

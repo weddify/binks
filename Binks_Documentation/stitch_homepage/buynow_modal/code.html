@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Buy Now Modal</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4a6df7",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101322",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better aesthetics inside the modal */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #475569;
+        }
+        
+        /* Remove default summary marker */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-200 font-display flex items-center justify-center min-h-screen p-4" data-alt="Abstract blue blurred gradient background representing modern digital aesthetic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADw4hQOli6uPpBPym-qAwTBLlbpilvZBFNcesWwGCgYqPotAw4IMp-F4GSJiXWCMR-_TBwlWYa9ghRN3qXRRVzdWaHdoyjHkJyBVUhqLvC1I77DKGjqbxPj811cf1NKVPP0MtOBNZU2nTX92mcGfwgH6oh0g2mBuk4zc8vkbmzEsCzC4NTbZzX0IOU2DC60J1Gwhnszk445XFz751jiQT-sxFYLI6CsnhbtIYVLckV4Xuq41XX4JPdXe3S1T01KouNpKgX5FbUwViL'); background-size: cover; background-position: center;">
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm transition-opacity duration-300">
+<!-- Modal Container -->
+<div class="relative w-full max-w-lg flex flex-col max-h-[90vh] bg-background-light dark:bg-background-dark rounded-xl shadow-2xl overflow-hidden ring-1 ring-black/5 dark:ring-white/10 animate-[fadeIn_0.3s_ease-out]">
+<!-- Close Button -->
+<button class="absolute top-4 right-4 z-10 p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-6 pb-2">
+<!-- Product Header -->
+<div class="flex flex-col gap-1 mb-6 pr-8">
+<h2 class="text-slate-900 dark:text-white tracking-tight text-2xl font-bold leading-tight">Netflix Premium 1 Bulan</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Best seller digital product</p>
+</div>
+<!-- Price and Badges -->
+<div class="flex flex-col gap-4 mb-8">
+<h1 class="text-primary text-3xl font-bold leading-tight tracking-tight">Rp 35.000</h1>
+<div class="flex flex-wrap gap-3">
+<div class="flex h-7 items-center justify-center gap-x-1.5 rounded-full bg-green-100 dark:bg-green-900/30 pl-3 pr-3 border border-green-200 dark:border-green-800">
+<span class="material-symbols-outlined text-green-700 dark:text-green-400 text-[16px]">inventory_2</span>
+<p class="text-green-800 dark:text-green-300 text-xs font-semibold">Stock: 99+</p>
+</div>
+<div class="flex h-7 items-center justify-center gap-x-1.5 rounded-full bg-orange-100 dark:bg-orange-900/30 pl-3 pr-3 border border-orange-200 dark:border-orange-800">
+<span class="material-symbols-outlined text-orange-700 dark:text-orange-400 text-[16px]">trending_up</span>
+<p class="text-orange-800 dark:text-orange-300 text-xs font-semibold">Sales: 1.2k</p>
+</div>
+</div>
+</div>
+<!-- Quantity Selector -->
+<div class="flex items-center justify-between p-4 mb-6 rounded-lg bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-slate-100 dark:bg-slate-700 rounded-lg text-slate-500 dark:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+</div>
+<p class="text-slate-900 dark:text-white text-base font-medium">Quantity</p>
+</div>
+<div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-900 rounded-lg p-1 border border-slate-200 dark:border-slate-700">
+<button class="w-8 h-8 flex items-center justify-center rounded-md bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-600 disabled:opacity-50">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<input class="w-8 p-0 text-center bg-transparent border-none text-slate-900 dark:text-white font-semibold focus:ring-0 [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" min="1" type="number" value="1"/>
+<button class="w-8 h-8 flex items-center justify-center rounded-md bg-primary text-white shadow-sm hover:bg-primary/90 transition-colors border border-transparent">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+<!-- Accordions -->
+<div class="flex flex-col gap-3 mb-6">
+<!-- Description -->
+<details class="group bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden transition-all duration-300 open:ring-2 open:ring-primary/20">
+<summary class="flex cursor-pointer items-center justify-between p-4 text-slate-900 dark:text-white font-medium select-none hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 group-open:text-primary">description</span>
+<span>Deskripsi</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pl-[3.25rem] text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-700/50 pt-3">
+<p>Akun private durasi 30 hari full. Support 4K UHD resolusi terbaik. Bisa login di Smart TV, Laptop, HP, Tablet. Anti-hold dan legal 100%.</p>
+<ul class="list-disc ml-4 mt-2 space-y-1">
+<li>Region Indonesia</li>
+<li>Garansi Full</li>
+<li>Private Profile (Pin Lock)</li>
+</ul>
+</div>
+</details>
+<!-- Warranty Policy -->
+<details class="group bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden transition-all duration-300 open:ring-2 open:ring-primary/20">
+<summary class="flex cursor-pointer items-center justify-between p-4 text-slate-900 dark:text-white font-medium select-none hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 group-open:text-primary">verified_user</span>
+<span>Warranty Policy</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pl-[3.25rem] text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-700/50 pt-3">
+<p>Garansi berlaku selama 30 hari sejak pembelian. Garansi meliputi akun tidak bisa login, password salah, atau membership terhenti sebelum waktunya. Garansi tidak berlaku jika melanggar TOS (ganti password/email).</p>
+</div>
+</details>
+<!-- Instruction -->
+<details class="group bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden transition-all duration-300 open:ring-2 open:ring-primary/20">
+<summary class="flex cursor-pointer items-center justify-between p-4 text-slate-900 dark:text-white font-medium select-none hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 group-open:text-primary">integration_instructions</span>
+<span>Instruction</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pl-[3.25rem] text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-700/50 pt-3">
+<p>Setelah pembayaran berhasil, detail akun (Email &amp; Password) akan dikirim otomatis ke Email dan WhatsApp anda. Silakan login di aplikasi Netflix menggunakan kredensial tersebut.</p>
+</div>
+</details>
+<!-- Additional Notes -->
+<details class="group bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden transition-all duration-300 open:ring-2 open:ring-primary/20">
+<summary class="flex cursor-pointer items-center justify-between p-4 text-slate-900 dark:text-white font-medium select-none hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 group-open:text-primary">info</span>
+<span>Additional Notes</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pl-[3.25rem] text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-700/50 pt-3">
+<p class="text-red-500 dark:text-red-400 font-medium">DILARANG MENGGANTI PASSWORD &amp; EMAIL AKUN.</p>
+<p>Melakukan perubahan pada data akun akan menghanguskan garansi secara otomatis. Gunakan profil yang sudah ditentukan.</p>
+</div>
+</details>
+</div>
+</div>
+<!-- Sticky Footer -->
+<div class="p-6 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 backdrop-blur-sm z-20">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Amount</span>
+<span class="text-slate-900 dark:text-white text-xl font-bold">Rp 35.000</span>
+</div>
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-semibold py-3.5 px-4 rounded-xl shadow-lg shadow-blue-500/30 dark:shadow-blue-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group">
+                        Proceed to Checkout
+                        <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<div class="flex items-center justify-center gap-2 text-xs text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-sm">lock</span>
+                        Secure encrypted transaction
+                    </div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

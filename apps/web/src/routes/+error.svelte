@@ -76,7 +76,7 @@
 
     <!-- Footer -->
     <p class="text-xs text-slate-400 font-medium pt-8">
-      &copy; {new Date().getFullYear()} Binks. All rights reserved.
+      &copy; {new Date().getFullYear()} SwiftAcc. All rights reserved.
     </p>
 
   </div>

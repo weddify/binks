@@ -2,7 +2,11 @@
   import { userOrders } from '$lib/data';
   import type { Order } from '$lib/data';
   import Button from '$lib/components/Button.svelte';
-  import { Search, Filter, Eye, CheckCircle2, XCircle, MoreHorizontal, ArrowUpRight, X, Calendar, CreditCard, ShoppingBag, User } from 'lucide-svelte';
+  import ActionButtons from '$lib/components/admin/ActionButtons.svelte';
+
+  import TableLayout from '$lib/components/admin/TableLayout.svelte';
+  import Header from '$lib/components/admin/Header.svelte';
+  import { Search, Eye, CircleCheck, CircleX, Ellipsis, ArrowUpRight, X, Calendar, CreditCard, ShoppingBag, User } from 'lucide-svelte';
   import { fade, scale } from 'svelte/transition';
 
   let searchQuery = '';
@@ -46,138 +50,120 @@
 
 <div class="space-y-3">
   <!-- Header -->
-  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-     <div>
-        <h1 class="text-2xl font-black text-slate-900 dark:text-white">Orders</h1>
-        <p class="text-slate-500 text-xs font-medium">Manage and process customer orders.</p>
-     </div>
-     <div class="flex gap-2">
-        <Button variant="outline">
-           Export CSV
-        </Button>
-     </div>
-  </div>
+  <!-- Header -->
+  <Header 
+      title="Orders" 
+      subtitle="Manage and process customer orders."
+  >
+      {#snippet actions()}
+         <Button variant="outline">
+            Export CSV
+         </Button>
+      {/snippet}
+  </Header>
 
   <!-- Search & Filter Bar -->
-  <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md border border-slate-100 dark:border-slate-700 p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-     <div class="relative w-full sm:max-w-xs">
-        <Search class="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-slate-400" />
-        <input 
-           type="text" 
-           bind:value={searchQuery}
-           placeholder="Search Order ID, User, or Item..." 
-           class="w-full pl-10 pr-4 py-2.5 text-sm border border-slate-200 dark:border-slate-600 rounded-xl bg-slate-50 dark:bg-slate-900/50 text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
-        />
-     </div>
-     
-     <div class="flex bg-slate-50 dark:bg-slate-900/50 rounded-lg p-1 border border-slate-200 dark:border-slate-700">
-        {#each ['ALL', 'PAID', 'PENDING', 'FAILED'] as status}
-           <button 
-              class="px-3 py-1.5 rounded-md text-[10px] font-bold transition-all {statusFilter === status ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}"
-              onclick={() => statusFilter = status}
-           >
-              {status}
-           </button>
-        {/each}
-     </div>
-  </div>
+  <!-- Search & Filter Bar -->
+  <!-- Table Layout -->
+  <TableLayout 
+      bind:searchQuery={searchQuery} 
+      placeholder="Search orders..."
+  >
+      {#snippet filters()}
+         <div class="flex gap-2">
+            {#each ['ALL', 'PAID', 'PENDING', 'FAILED'] as status}
+                <button 
+                  class="px-3 py-1.5 rounded-full text-xs font-bold transition-colors {statusFilter === status ? 'bg-primary text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400'}"
+                  onclick={() => statusFilter = status}
+                >
+                    {status}
+                </button>
+            {/each}
+         </div>
+      {/snippet}
 
-  <!-- Orders Table -->
-  <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
-     <div class="overflow-x-auto">
-        <table class="w-full text-left border-collapse">
-           <thead class="bg-slate-50 dark:bg-slate-900/50 text-xs font-bold text-slate-500 uppercase tracking-wider">
-              <tr>
-                 <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700">Order ID</th>
-                 <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700">User</th>
-                 <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 hidden xl:table-cell">Items</th>
-                 <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 hidden xl:table-cell">Date</th>
-                 <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700">Total</th>
-                 <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 hidden xl:table-cell">Payment</th>
-                 <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700">Status</th>
-                 <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 text-right">Actions</th>
-              </tr>
-           </thead>
-           <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
-              {#each filteredOrders as order}
-                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
-                    <td class="px-6 py-4 text-xs font-mono font-bold text-blue-600">
-                       <button 
-                         onclick={() => openOrderDetails(order)}
-                         class="hover:underline focus:outline-none"
-                       >
-                         #{order.id}
-                       </button>
-                    </td>
-                    <td class="px-6 py-4">
-                        <div class="flex items-center gap-3">
-                            <div class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden flex-shrink-0">
-                                {#if order.user?.avatar}
-                                    <img src={order.user.avatar} alt={order.user.name} class="w-full h-full object-cover" />
-                                {:else}
-                                    <div class="w-full h-full flex items-center justify-center text-slate-400">
-                                        <User class="size-4" />
-                                    </div>
-                                {/if}
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-xs font-bold text-slate-900 dark:text-white truncate max-w-[120px]">{order.user?.name || 'Guest'}</span>
-                                <span class="text-[10px] text-slate-500 truncate max-w-[120px]">{order.user?.email || 'No email'}</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 hidden xl:table-cell">
-                       <div class="text-sm font-medium text-slate-900 dark:text-white truncate max-w-[200px]" title={order.items}>
-                          {order.items}
-                       </div>
-                       {#if order.products && order.products.length > 1}
-                          <div class="text-[10px] text-slate-500 font-bold mt-0.5">
-                             + {order.products.length - 1} more items
+      <table class="w-full text-left border-collapse">
+         <thead class="bg-slate-50 dark:bg-slate-900/50 text-xs font-bold text-slate-500 uppercase tracking-wider">
+            <tr>
+               <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700">Order ID</th>
+               <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700">User</th>
+               <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 hidden xl:table-cell">Items</th>
+               <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 hidden xl:table-cell">Date</th>
+               <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700">Total</th>
+               <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 hidden xl:table-cell">Payment</th>
+               <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700">Status</th>
+               <th class="px-6 py-4 border-b border-slate-100 dark:border-slate-700 text-right">Actions</th>
+            </tr>
+         </thead>
+         <tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+            {#each filteredOrders as order}
+               <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+                  <td class="px-6 py-4 text-xs font-mono font-bold text-blue-600">
+                     <button 
+                       onclick={() => openOrderDetails(order)}
+                       class="hover:underline focus:outline-none"
+                     >
+                       #{order.id}
+                     </button>
+                  </td>
+                  <td class="px-6 py-4">
+                      <div class="flex items-center gap-3">
+                          <div class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden flex-shrink-0">
+                              {#if order.user?.avatar}
+                                  <img src={order.user.avatar} alt={order.user.name} class="w-full h-full object-cover" />
+                              {:else}
+                                  <div class="w-full h-full flex items-center justify-center text-slate-400">
+                                      <User class="size-4" />
+                                  </div>
+                              {/if}
                           </div>
-                       {/if}
-                    </td>
-                    <td class="px-6 py-4 text-xs text-slate-500 hidden xl:table-cell">{order.date}</td>
-                    <td class="px-6 py-4 text-sm font-bold text-slate-900 dark:text-white">{formatPrice(order.total)}</td>
-                    <td class="px-6 py-4 text-xs font-bold text-slate-500 hidden xl:table-cell">{order.paymentMethod || '-'}</td>
-                    <td class="px-6 py-4">
-                       <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider
-                          {order.status === 'PAID' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400' : 
-                           order.status === 'PENDING' ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' : 
-                           'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'}">
-                          {order.status}
-                       </span>
-                    </td>
-                    <td class="px-6 py-4 text-right">
-                       <div class="flex items-center justify-end gap-2">
-                          {#if order.status === 'PENDING'}
-                             <button class="p-1.5 bg-emerald-100 text-emerald-600 hover:bg-emerald-200 rounded-lg transition-colors" title="Approve Payment">
-                                <CheckCircle2 class="size-4" />
-                             </button>
-                             <button class="p-1.5 bg-red-100 text-red-600 hover:bg-red-200 rounded-lg transition-colors" title="Reject">
-                                <XCircle class="size-4" />
-                             </button>
-                          {/if}
-                          <button 
-                            onclick={() => openOrderDetails(order)}
-                            class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
-                            title="View Details"
-                          >
-                             <ArrowUpRight class="size-4" />
-                          </button>
-                       </div>
-                    </td>
-                 </tr>
-              {/each}
-           </tbody>
-        </table>
+                          <div class="flex flex-col">
+                              <span class="text-xs font-bold text-slate-900 dark:text-white truncate max-w-[120px]">{order.user?.name || 'Guest'}</span>
+                              <span class="text-[10px] text-slate-500 truncate max-w-[120px]">{order.user?.email || 'No email'}</span>
+                          </div>
+                      </div>
+                  </td>
+                  <td class="px-6 py-4 hidden xl:table-cell">
+                     <div class="text-sm font-medium text-slate-900 dark:text-white truncate max-w-[200px]" title={order.items}>
+                        {order.items}
+                     </div>
+                     {#if order.products && order.products.length > 1}
+                        <div class="text-[10px] text-slate-500 font-bold mt-0.5">
+                           + {order.products.length - 1} more items
+                        </div>
+                     {/if}
+                  </td>
+                  <td class="px-6 py-4 text-xs text-slate-500 hidden xl:table-cell">{order.date}</td>
+                  <td class="px-6 py-4 text-sm font-bold text-slate-900 dark:text-white">{formatPrice(order.total)}</td>
+                  <td class="px-6 py-4 text-xs font-bold text-slate-500 hidden xl:table-cell">{order.paymentMethod || '-'}</td>
+                  <td class="px-6 py-4">
+                     <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider
+                        {order.status === 'PAID' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400' : 
+                         order.status === 'PENDING' ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' : 
+                         'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'}">
+                        {order.status}
+                     </span>
+                  </td>
+                  <td class="px-6 py-4 text-right">
+                     <ActionButtons 
+                        onView={() => openOrderDetails(order)}
+                        customActions={order.status === 'PENDING' ? [
+                           { icon: CircleCheck, label: 'Approve Payment', onClick: () => {}, color: 'success' },
+                           { icon: CircleX, label: 'Reject', onClick: () => {}, color: 'danger' }
+                        ] : []}
+                     />
+                  </td>
+               </tr>
+            {/each}
+         </tbody>
+      </table>
 
-        {#if filteredOrders.length === 0}
-           <div class="py-12 text-center text-slate-500">
-              <p class="font-medium">No orders found.</p>
-           </div>
-        {/if}
-     </div>
-  </div>
+      {#if filteredOrders.length === 0}
+         <div class="py-12 text-center text-slate-500">
+            <p class="font-medium">No orders found.</p>
+         </div>
+      {/if}
+  </TableLayout>
 </div>
 
 <!-- Order Details Modal -->

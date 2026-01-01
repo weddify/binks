@@ -3,7 +3,7 @@
   import { userOrders } from '$lib/data';
   import Navbar from '$lib/components/Navbar.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import { ShieldCheck, Package, Copy, Check, Lock, ChevronLeft, AlertCircle, Clock, CheckCircle2, User, Key, FileText, Receipt, XCircle, ChevronRight } from 'lucide-svelte';
+  import { ShieldCheck, Package, Copy, Check, Lock, ChevronLeft, CircleAlert, Clock, CircleCheck, User, Key, FileText, Receipt, CircleX, ChevronRight } from 'lucide-svelte';
   import { goto } from '$app/navigation';
   import { fade } from 'svelte/transition';
 
@@ -59,11 +59,11 @@
                  </div>
                  {#if order.status === 'PAID'}
                     <div class="px-3 py-1.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 font-bold text-xs rounded-lg uppercase tracking-wider flex items-center gap-2">
-                       <CheckCircle2 class="size-4" /> Paid
+                       <CircleCheck class="size-4" /> Paid
                     </div>
                  {:else if order.status === 'EXPIRED'}
                     <div class="px-3 py-1.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-bold text-xs rounded-lg uppercase tracking-wider flex items-center gap-2">
-                       <XCircle class="size-4" /> Expired
+                       <CircleX class="size-4" /> Expired
                     </div>
                  {/if}
               </div>
@@ -259,7 +259,7 @@
 
                     {:else if order.status === 'EXPIRED'}
                         <div class="bg-red-50 dark:bg-red-900/10 rounded-xl border border-red-100 dark:border-red-900/30 p-8 text-center">
-                           <AlertCircle class="size-12 text-red-400 mx-auto mb-4" />
+                           <CircleAlert class="size-12 text-red-400 mx-auto mb-4" />
                            <h3 class="font-bold text-red-900 dark:text-red-400 text-lg mb-2">Order Expired</h3>
                            <p class="text-red-700 dark:text-red-300 p-2">This order has expired and cannot be processed.</p>
                         </div>

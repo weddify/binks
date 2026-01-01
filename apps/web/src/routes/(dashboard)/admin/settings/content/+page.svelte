@@ -1,7 +1,7 @@
 <script lang="ts">
   import { siteSettings } from '$lib/stores/siteSettings.svelte';
   import { siteConfig } from '$lib/config';
-  import { Save, CheckCircle2, XCircle, MonitorPlay, X } from 'lucide-svelte';
+  import { Save, CircleCheck, CircleX, MonitorPlay, X } from 'lucide-svelte';
   import { slide } from 'svelte/transition';
 
   let isSaving = $state(false);
@@ -58,7 +58,7 @@
   <!-- Toast -->
   {#if showToast}
     <div in:slide={{ duration: 300, axis: 'y' }} class="fixed top-24 right-4 z-[60] bg-white dark:bg-slate-800 border-l-4 border-emerald-500 shadow-xl rounded-lg p-4 flex items-start gap-3 max-w-sm">
-      <CheckCircle2 class="size-5 text-emerald-500 mt-0.5" />
+      <CircleCheck class="size-5 text-emerald-500 mt-0.5" />
       <div>
          <h4 class="font-bold text-slate-900 dark:text-white text-sm">Settings Saved</h4>
          <p class="text-xs text-slate-500 mt-1">Hero slides have been updated.</p>
@@ -103,7 +103,7 @@
                            <div class="text-[10px] text-slate-500 truncate">{slide.description}</div>
                       </div>
                       <button class="text-red-500 hover:text-red-700 transition-colors p-1" aria-label="Delete Slide" onclick={() => siteSettings.removeSlide(slide.id)}>
-                          <XCircle class="size-4" />
+                          <CircleX class="size-4" />
                       </button>
                   </div>
               {/each}

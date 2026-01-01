@@ -3,19 +3,35 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import ProductListItem from '$lib/components/ProductListItem.svelte';
+  import ProductListItemSkeleton from '$lib/components/ProductListItemSkeleton.svelte';
+  import Skeleton from '$lib/components/Skeleton.svelte';
   import TopFilterBar from '$lib/components/TopFilterBar.svelte';
   import { Home, ChevronRight, Bolt, ShieldCheck, Headset } from 'lucide-svelte';
   import { database, type CategoryData, type Product, type ProductGroup } from '$lib/data';
+  import { onMount } from 'svelte';
+  import Seo from '$lib/components/Seo.svelte';
 
-  $: slug = $page.params.slug as string;
-  $: categoryData = (database[slug] || { title: slug, description: "Category not found", groups: [] }) as CategoryData;
+  // --- Reactive Derived Values ---
+  const slug = $derived($page.params.slug as string);
+  const categoryData = $derived((database[slug] || { title: slug, description: "Category not found", groups: [] }) as CategoryData);
+  
+  // --- Loading Logic ---
+  let isLoading = $state(true);
+
+  onMount(() => {
+    // Simulate fetch delay
+    const timer = setTimeout(() => {
+        isLoading = false;
+    }, 1500);
+    return () => clearTimeout(timer);
+  });
 
   // --- Filtering Logic ---
-  let showOutOfStock = false; 
-  let selectedCategory = "";
-  let searchTerm = "";
+  let showOutOfStock = $state(false); 
+  let selectedCategory = $state("");
+  let searchTerm = $state("");
 
-  $: filteredGroups = (categoryData.groups || []).map((group: ProductGroup) => {
+  const filteredGroups = $derived((categoryData.groups || []).map((group: ProductGroup) => {
     // 1. Filter by Category (Group Title)
     if (selectedCategory && group.groupTitle !== selectedCategory) return null;
 
@@ -33,18 +49,54 @@
     if (filteredProducts.length === 0) return null;
 
     return { ...group, products: filteredProducts };
-  }).filter(Boolean) as ProductGroup[];
+  }).filter(Boolean) as ProductGroup[]);
 
   // Reactive options for top bar
-  $: groupTitles = categoryData.groups ? categoryData.groups.map((g: ProductGroup) => g.groupTitle) : [];
+  const groupTitles = $derived(categoryData.groups ? categoryData.groups.map((g: ProductGroup) => g.groupTitle) : []);
 
 </script>
+
+<Seo 
+  title={categoryData.title} 
+  description={categoryData.description}
+/>
 
 <div class="flex flex-col min-h-screen">
   <Navbar />
   
   <main class="flex-grow flex flex-col items-center bg-background-light dark:bg-background-dark">
     <div class="w-full max-w-[1200px] px-4 md:px-2 py-6 md:py-6">
+      
+      {#if isLoading}
+          <!-- Skeleton Header -->
+          <div class="mb-8 mt-2 space-y-4">
+             <Skeleton class="h-4 w-32" /> <!-- Breadcrumbs -->
+             <div class="space-y-2">
+                <Skeleton class="h-10 w-64" /> <!-- Title -->
+                <Skeleton class="h-5 w-full max-w-xl" /> <!-- Description -->
+             </div>
+             <Skeleton class="h-12 w-full rounded-xl" /> <!-- Filter Bar -->
+          </div>
+
+           <!-- Skeleton Groups -->
+           <div class="space-y-8">
+              {#each Array(3) as _}
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+                   <!-- Group Header Skeleton -->
+                   <div class="px-6 py-3 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
+                      <Skeleton class="h-6 w-48" />
+                   </div>
+                   <!-- List Items Skeleton -->
+                   <div>
+                      {#each Array(3) as _}
+                         <ProductListItemSkeleton />
+                      {/each}
+                   </div>
+                </div>
+              {/each}
+           </div>
+
+      {:else}
       <!-- Breadcrumbs -->
       <div class="flex items-center flex-wrap gap-2 mb-6 text-sm">
         <a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors flex items-center gap-1" href="/">
@@ -98,6 +150,7 @@
            </div>
         {/each}
       </div>
+      {/if}
 
        <!-- Trust Badges -->
       <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 py-10 border-t border-slate-200 dark:border-slate-800">

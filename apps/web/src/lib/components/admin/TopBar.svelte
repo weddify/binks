@@ -3,7 +3,7 @@
   import Button from '$lib/components/Button.svelte';
   import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
-  let { onMenuClick } = $props<{ onMenuClick: () => void }>();
+  let { onMenuClick, isSidebarCollapsed = false } = $props<{ onMenuClick: () => void, isSidebarCollapsed?: boolean }>();
 
   let isProfileOpen = $state(false);
   let isNotificationsOpen = $state(false);
@@ -36,7 +36,7 @@
 
 <svelte:window onclick={handleClickOutside} />
 
-<header class="h-16 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 fixed top-0 right-0 left-0 lg:left-64 z-30 px-4 sm:px-6 flex items-center justify-between transition-all duration-300">
+<header class="h-16 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 fixed top-0 right-0 left-0 {isSidebarCollapsed ? 'lg:left-20' : 'lg:left-64'} z-30 px-4 sm:px-6 flex items-center justify-between transition-all duration-300">
     
     <!-- Left: Mobile Menu & Search -->
     <div class="flex items-center gap-4 flex-1">

@@ -1,7 +1,7 @@
 <script lang="ts">
   import Navbar from '$lib/components/Navbar.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import { ShieldCheck, CheckCircle2, QrCode, CreditCard, Banknote } from 'lucide-svelte';
+  import { ShieldCheck, CircleCheck, QrCode, CreditCard, Banknote } from 'lucide-svelte';
   import { toast } from 'svelte-sonner';
   import { slide } from 'svelte/transition';
 
@@ -130,7 +130,7 @@
                        </div>
                        {#if selectedMethod === method.id}
                           <div class="absolute top-4 right-4 text-primary">
-                             <CheckCircle2 class="size-5 fill-primary text-white" />
+                             <CircleCheck class="size-5 fill-primary text-white" />
                           </div>
                        {/if}
                    </button>
@@ -152,7 +152,7 @@
                                  </div>
                                  <span class="text-sm font-medium text-slate-700 dark:text-slate-300">{bank.name.replace(' Virtual Account', '')}</span>
                                  {#if selectedBank === bank.id}
-                                     <CheckCircle2 class="size-4 text-primary absolute right-3 top-1/2 -translate-y-1/2" />
+                                     <CircleCheck class="size-4 text-primary absolute right-3 top-1/2 -translate-y-1/2" />
                                  {/if}
                              </button>
                          {/each}

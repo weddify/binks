@@ -4,6 +4,7 @@
   import { DollarSign, ShoppingCart, Package, Users, ArrowUpRight, TrendingUp } from 'lucide-svelte';
   import SalesChart from '$lib/components/admin/SalesChart.svelte';
   import StockWidget from '$lib/components/admin/StockWidget.svelte';
+  import Button from '$lib/components/Button.svelte';
 
   // Omit CheckCircle import to avoid error if not used, or import if needed
   
@@ -31,12 +32,12 @@
         <p class="text-slate-500 dark:text-slate-400 text-sm">Overview of your store performance.</p>
      </div>
      <div class="flex gap-3">
-        <button class="px-4 py-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded-lg font-semibold text-sm shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+        <Button variant="outline" class="font-semibold text-sm">
            Last 30 Days
-        </button>
-        <button class="px-4 py-2 bg-primary text-white rounded-lg font-semibold text-sm shadow-lg shadow-primary/30 hover:bg-primary/90 hover:shadow-primary/40 transition-all transform active:scale-95">
+        </Button>
+        <Button variant="primary" class="font-semibold text-sm shadow-lg shadow-primary/30">
            Download Report
-        </button>
+        </Button>
      </div>
   </div>
 

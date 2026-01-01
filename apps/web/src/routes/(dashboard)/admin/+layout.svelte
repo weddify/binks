@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { LayoutDashboard, Package, ShoppingCart, Users, Settings, LogOut, Store, Menu, Folder, Ticket, ChevronLeft, ChevronRight } from 'lucide-svelte';
+  import { LayoutDashboard, Package, ShoppingCart, Users, Settings, LogOut, Store, Menu, Folder, Ticket, ChevronLeft, ChevronRight, FileText } from 'lucide-svelte';
   import { slide, fade } from 'svelte/transition';
   import TopBar from '$lib/components/admin/TopBar.svelte';
   import { siteConfig } from '$lib/config';
@@ -16,6 +16,7 @@
     { name: 'Orders', href: '/admin/orders', icon: ShoppingCart },
     { name: 'Coupons', href: '/admin/coupons', icon: Ticket },
     { name: 'Customers', href: '/admin/customers', icon: Users },
+    { name: 'Pages', href: '/admin/pages', icon: FileText },
     { name: 'Settings', href: '/admin/settings', icon: Settings },
   ];
 
@@ -100,8 +101,8 @@
   </aside>
 
   <!-- TopBar (Replaces Mobile Header) -->
-  <div class="lg:hidden">
-    <TopBar onMenuClick={toggleMobileMenu} />
+  <div class="">
+    <TopBar onMenuClick={toggleMobileMenu} {isSidebarCollapsed} />
   </div>
 
   <!-- Mobile Sidebar Overlay -->

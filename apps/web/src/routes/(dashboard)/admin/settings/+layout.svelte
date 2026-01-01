@@ -1,7 +1,9 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { slide } from 'svelte/transition';
-  import { CheckCircle2, Globe, CreditCard, LayoutTemplate } from 'lucide-svelte'; // LayoutTemplate for Hero
+  import { CircleCheck, Globe, CreditCard, LayoutTemplate } from 'lucide-svelte'; // LayoutTemplate for Hero
+
+  import Header from '$lib/components/admin/Header.svelte';
 
   let showToast = $state(false);
 
@@ -25,10 +27,10 @@
 
 <div class="space-y-3">
   <!-- Header -->
-  <div>
-    <h1 class="text-2xl font-black text-slate-900 dark:text-white">Settings</h1>
-    <p class="text-slate-500 mt-1">Configure your store preferences and integrations.</p>
-  </div>
+  <Header 
+      title="Settings" 
+      description="Configure your store preferences and integrations."
+  />
 
   <!-- Tabs -->
   <div class="border-b border-slate-200 dark:border-slate-700 overflow-x-auto">

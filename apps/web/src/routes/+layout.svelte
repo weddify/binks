@@ -2,15 +2,19 @@
   import "../app.css";
   import { siteConfig } from '$lib/config';
   import { Toaster } from 'svelte-sonner';
+  import Seo from '$lib/components/Seo.svelte';
 
   import BackToTop from '$lib/components/BackToTop.svelte';
 
   let { children } = $props();
 </script>
 
+<Seo 
+  title={`${siteConfig.siteName} - ${siteConfig.meta.description}`}
+  description={siteConfig.meta.description} 
+/>
+
 <svelte:head>
-  <title>{siteConfig.siteName} - {siteConfig.meta.description}</title>
-  <meta name="description" content={siteConfig.meta.description} />
   <meta name="keywords" content={siteConfig.meta.keywords} />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </svelte:head>

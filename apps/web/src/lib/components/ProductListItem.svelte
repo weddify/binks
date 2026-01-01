@@ -58,7 +58,7 @@
       <div class="w-px h-3 bg-slate-300 dark:bg-slate-600"></div>
       <div class="flex items-center gap-1">
         <TrendingUp class="size-3.5" />
-        <span>Terjual: {sold}</span>
+        <span>Sold: {sold}</span>
       </div>
     </div>
   </div>
@@ -80,7 +80,7 @@
          disabled={stock === 0}
          on:click={openModal}
        >
-         {stock > 0 ? 'Buy Now' : 'Habis'}
+         {stock > 0 ? 'Buy Now' : 'Out of Stock'}
        </button>
      </div>
   </div>

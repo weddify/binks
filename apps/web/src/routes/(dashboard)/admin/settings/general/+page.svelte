@@ -1,6 +1,6 @@
 <script lang="ts">
   import { siteConfig } from '$lib/config';
-  import { Save, Globe, MessageCircle, CheckCircle2, MonitorPlay } from 'lucide-svelte';
+  import { Save, Globe, MessageCircle, CircleCheck, MonitorPlay } from 'lucide-svelte';
   import { slide } from 'svelte/transition';
 
   // Local state initialized from config
@@ -32,7 +32,7 @@
   <!-- Toast -->
   {#if showToast}
     <div in:slide={{ duration: 300, axis: 'y' }} class="fixed top-24 right-4 z-[60] bg-white dark:bg-slate-800 border-l-4 border-emerald-500 shadow-xl rounded-lg p-4 flex items-start gap-3 max-w-sm">
-      <CheckCircle2 class="size-5 text-emerald-500 mt-0.5" />
+      <CircleCheck class="size-5 text-emerald-500 mt-0.5" />
       <div>
          <h4 class="font-bold text-slate-900 dark:text-white text-sm">Settings Saved</h4>
          <p class="text-xs text-slate-500 mt-1">General configuration has been updated.</p>

@@ -6,6 +6,7 @@
   import FormSelect from '$lib/components/form/FormSelect.svelte';
   import FormCheckbox from '$lib/components/form/FormCheckbox.svelte';
   import FormImageUpload from '$lib/components/form/FormImageUpload.svelte';
+  import Editor from '$lib/components/admin/Editor.svelte';
   
   // Form State
   let title = '';
@@ -93,11 +94,14 @@
                </div>
            </div>
 
-           <!-- Description -->
-           <div class="pt-2 border-t border-slate-50 dark:border-slate-800/50">
-              <FormTextarea id="description" label="Description" bind:value={description} placeholder="Describe the product..." />
-           </div>
-        </div>
+            <!-- Description -->
+            <div class="pt-2 border-t border-slate-50 dark:border-slate-800/50">
+               <div class="space-y-1.5 min-h-[300px]">
+                  <label for="description" class="text-xs font-bold text-slate-500 uppercase">Description</label>
+                  <Editor content={description} onchange={(html) => description = html} />
+               </div>
+            </div>
+         </div>
 
         <!-- Additional Information (Tabbed) -->
         <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm space-y-4">
@@ -115,33 +119,24 @@
               </div>
            </div>
 
-           <div class="pt-2">
-              {#if activeInfoTab === 'instructions'}
-                 <FormTextarea 
-                    id="instructions" 
-                    label="Redemption Instructions" 
-                    bind:value={instructionsText} 
-                    rows={6} 
-                    placeholder="Step 1: Login...&#10;Step 2: Enter code..." 
-                 />
-              {:else if activeInfoTab === 'warranty'}
-                 <FormTextarea 
-                    id="warranty" 
-                    label="Warranty Policy" 
-                    bind:value={warrantyPolicy} 
-                    rows={6} 
-                    placeholder="e.g. 30 Days Full Replacement..." 
-                 />
-              {:else if activeInfoTab === 'notes'}
-                 <FormTextarea 
-                    id="notes" 
-                    label="Additional Notes" 
-                    bind:value={notes} 
-                    rows={6} 
-                    placeholder="Important information for the buyer..." 
-                 />
-              {/if}
-           </div>
+            <div class="pt-2">
+               {#if activeInfoTab === 'instructions'}
+                  <div class="space-y-1.5 min-h-[300px]">
+                     <label for="instructions" class="text-xs font-bold text-slate-500 uppercase">Redemption Instructions</label>
+                     <Editor content={instructionsText} onchange={(html) => instructionsText = html} />
+                  </div>
+               {:else if activeInfoTab === 'warranty'}
+                  <div class="space-y-1.5 min-h-[300px]">
+                     <label for="warranty" class="text-xs font-bold text-slate-500 uppercase">Warranty Policy</label>
+                     <Editor content={warrantyPolicy} onchange={(html) => warrantyPolicy = html} />
+                  </div>
+               {:else if activeInfoTab === 'notes'}
+                  <div class="space-y-1.5 min-h-[300px]">
+                     <label for="notes" class="text-xs font-bold text-slate-500 uppercase">Additional Notes</label>
+                     <Editor content={notes} onchange={(html) => notes = html} />
+                  </div>
+               {/if}
+            </div>
         </div>
      </div>
 

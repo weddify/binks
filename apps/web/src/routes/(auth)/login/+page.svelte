@@ -36,7 +36,7 @@
            showPasswordToggle={true}
         />
         <div class="flex justify-end mt-1">
-          <a class="text-sm font-medium text-primary hover:text-blue-400 transition-colors" href="/">Forgot Password?</a>
+          <a class="text-sm font-medium text-primary hover:text-blue-400 transition-colors" href="/forgot-password">Forgot Password?</a>
         </div>
       </div>
       
